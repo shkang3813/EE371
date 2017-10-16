@@ -29,41 +29,17 @@ module Tester(out[3:0], clock, reset);
   	end
 
 	parameter stimDelay = 20;
+	integer i;
 
 	initial  // Stimulus
 	  begin
 	               clock = 'b0;
 	    #stimDelay clock = 'b1; reset = 'b0;
 	    #stimDelay clock = 'b0; reset = 'b1;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-	    #stimDelay clock = 'b1;
-	    #stimDelay clock = 'b0;
-		
+	    for (i = 0; i < 16; i++) begin
+		    #stimDelay clock = 'b1;
+		    #stimDelay clock = 'b0;
+	    end		
 	    #(2*stimDelay);            	// needed to see END of simulation
 	    $finish;                   		// finish simulation
 	  end
