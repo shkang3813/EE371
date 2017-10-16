@@ -46,12 +46,12 @@ int main(int argc, char **argv) {
 // Checks whether the given string represents an integer
 // Returns true if the given string represents an integer
 static bool isInteger(char *input) {
-        int length = strlen(input);
-        for (int index = 0; index < length; index++) {
-                char current = input[index];
-                if (!isdigit(current)) {
-                        return 0;
-                }
+    int length = strlen(input);
+    for (int index = 0; index < length; index++) {
+        char current = input[index];
+        if (!isdigit(current)) {
+            return 0;
         }
-        return 1;
+    }
+    return 1;
 }
