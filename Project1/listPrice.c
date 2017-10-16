@@ -13,20 +13,22 @@ int main(int argc, char **argv) {
 	char *discountString;
 
 	printf("Enter Manufacturer's Cost: \n");
-	scanf("%s", &manufacturerCostString);
+	scanf("%s", manufacturerCostString);
 	printf("Enter Dealer's Markup Cost: \n");
-	scanf("%s", &markupCostString);
+	scanf("%s", markupCostString);
 	printf("Enter Local Sales Tax Percentage (0.0 - 100.0): \n");
-	scanf("%s", &salesTaxString);
+	scanf("%s", salesTaxString);
 	printf("Enter Pre Tax Discount Percentage (0.0 - 100.0): \n");
-	scanf("%s", &discountString);
+	scanf("%s", discountString);
 	printf("\n");
 
 	// Check if the inputs are valid
 	if (!isInteger(manufacturerCostString)) {
+		printf("Manufacturer cost must be an integer!\n")
 		return EXIT_FAILURE;
 	}
 	if (!isInteger(markupCostString)) {
+		printf("Markup cost must be an integer!\n")
 		return EXIT_FAILURE;
 	}
 
@@ -45,7 +47,7 @@ int main(int argc, char **argv) {
 
 // Checks whether the given string represents an integer
 // Returns true if the given string represents an integer
-static bool isInteger(char *input) {
+static int isInteger(char *input) {
     int length = strlen(input);
     for (int index = 0; index < length; index++) {
         char current = input[index];
