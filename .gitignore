@@ -1,0 +1,10 @@
+**/*.ammdb
+**/*.cdb
+**/*.dfp
+**/*.hdb
+**/*.logdb
+**/*.rcfdb
+**/*.dpi
+**/*.kpt
+**/*.tdf
+**/*.stp
