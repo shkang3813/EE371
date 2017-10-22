@@ -1,12 +1,13 @@
-module Door(isClosed, toggle, pressureChanging, clock, reset);
-	input toggle, pressureChanging, clock, reset;
+module Door(isClosed, toggle, pressureChanging, isHighPressure,
+		clock, reset);
+	input toggle, pressureChanging, isHighPressure, clock, reset;
 	output reg isClosed;
 
 	always @(posedge clock or posedge reset) begin
 		if (reset) begin
 			isClosed <= 'b1;
 		end
-		else if (pressureChanging) begin
+		else if (pressureChanging || isHighPressure) begin
 			isClosed <= 'b1;
 		end
 		else if (toggle) begin

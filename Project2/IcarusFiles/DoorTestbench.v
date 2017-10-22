@@ -3,8 +3,8 @@
 module DoorTestbench();
 	wire isClosed, toggle, pressureChanging, clock, reset;
 
-	Door door(isClosed, toggle, pressureChanging, clock, reset);
-	Tester test(isClosed, toggle, pressureChanging, clock, reset);
+	Door door(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
+	Tester test(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
 
 	// file for gtkwave
   	initial begin
@@ -21,23 +21,25 @@ endmodule
    open to closed and vice versa
 3) pressure changes set the door to closed and
    keep it closed regardless of toggle
+4) when the chamber is at high pressure, the
+   door will not respond to the toggle
 */
-module Tester(isClosed, toggle, pressureChanging, clock, reset);
+module Tester(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
 	input isClosed;
-	output reg toggle, pressureChanging, clock, reset;
+	output reg toggle, pressureChanging, isHighPressure, clock, reset;
 
 	initial  // Response
   	begin
-	$display("\t\t clock  reset  toggle  pressure\t isClosed \t    Time ");
-    	$monitor("\t\t %b\t %b\t  %b\t   %b\t %b", clock, reset, toggle, 
-						pressureChanging, isClosed, $time);
+	$display("\t\t clock  reset  toggle  pressure isHigh\t isClosed \t    Time ");
+    	$monitor("\t\t %b\t %b\t  %b\t   %b\t   %b\t  %b", clock, reset, toggle, 
+						pressureChanging, isHighPressure, isClosed, $time);
   	end
 
   	parameter stimDelay = 20;
 
   	initial
   	begin
-  					reset = 'b1; toggle = 'b0; pressureChanging = 'b0;
+  					reset = 'b1; toggle = 'b0; pressureChanging = 'b0; isHighPressure = 'b0;
   					clock = 'b0;
   		#stimDelay  reset = 'b0;
   		#stimDelay  clock = 'b1; toggle = 'b1;  // test toggle
@@ -56,6 +58,13 @@ module Tester(isClosed, toggle, pressureChanging, clock, reset);
   		#stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; toggle = 'b0;
   		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; pressureChanging = 'b1;  // change pressure to high
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; pressureChanging = 'b0; isHighPressure = 'b1;
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; toggle = 'b1;
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; toggle = 'b0;
 
 	  	#(2 * stimDelay);
 		$finish;
