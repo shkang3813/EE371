@@ -65,6 +65,18 @@ module Tester(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
   		#stimDelay  clock = 'b1; toggle = 'b1;
   		#stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; toggle = 'b0;
+  		#stimDelay  clock = 'b1; pressureChanging = 'b1;  // change pressure to high
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; pressureChanging = 'b0; isHighPressure = 'b0;
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; toggle = 'b1;  // make sure toggle is registered only once
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1;
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1;
+  		#stimDelay  clock = 'b0;
+  		#stimDelay  clock = 'b1; toggle = 'b0;
+  		#stimDelay  clock = 'b0;
 
 	  	#(2 * stimDelay);
 		$finish;
