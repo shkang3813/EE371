@@ -1,4 +1,3 @@
-`include "RegisterSignal.v"
 `include "Counter.v"
 
 // Pressurizes the interlock chamber.
@@ -6,9 +5,6 @@
 module Pressurizer(pressurizing, start, clock, reset);
 	input start, clock, reset;
 	output reg pressurizing;
-
-	wire actualStart;
-	RegisterSignal register(actualStart, start, clock, reset);
 
 	wire[11:0] count;
 	reg restart;
@@ -19,7 +15,7 @@ module Pressurizer(pressurizing, start, clock, reset);
 			restart <= 'b0;
 			pressurizing <= 'b0;
 		end
-		else if (actualStart && ~pressurizing) begin  // make sure we are not already pressurizing
+		else if (start && ~pressurizing) begin  // make sure we are not already pressurizing
 			restart <= 'b1;
 			pressurizing <= 'b1;
 		end

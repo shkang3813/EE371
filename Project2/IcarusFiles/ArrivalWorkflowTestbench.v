@@ -48,12 +48,20 @@ module Tester(busy, startPressurizing, startDepressurizing,
   		#stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; odClosed = 'b1; idClosed = 'b1;  // advance to state C
   		#stimDelay  clock = 'b0;
+      #stimDelay  clock = 'b1;
+      #stimDelay  clock = 'b0;
+      #stimDelay  clock = 'b1;
+      #stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; isHighPressure = 'b0;
   		#stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; odClosed = 'b0;
   		#stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; odClosed = 'b1;
   		#stimDelay  clock = 'b0;
+      #stimDelay  clock = 'b1;
+      #stimDelay  clock = 'b0;
+      #stimDelay  clock = 'b1;
+      #stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; isHighPressure = 'b1;
   		#stimDelay  clock = 'b0;
   		#stimDelay  clock = 'b1; idClosed = 'b0;
