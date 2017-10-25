@@ -2,12 +2,12 @@
 
 int main() {
 	// Part 1
-	int intOne;// = 1;
-	int intTwo;// = 2;
-	float floatOne;// = 1.0;
-	float floatTwo;// = 2.0;
-	char charOne;// = 'a';
-	char charTwo;// = 'b';
+	int intOne = 1;
+	int intTwo = 2;
+	float floatOne = 1.0;
+	float floatTwo = 2.0;
+	char charOne = 'a';
+	char charTwo = 'b';
 
 	int *intPointer;
 	float *floatPointer;
@@ -27,6 +27,8 @@ int main() {
 	printf("%c\n", *charPointer);
 	charPointer = &charTwo;
 	printf("%c\n", *charPointer);
+
+	printf("\n");
 
 
 	// Part 2
