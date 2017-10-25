@@ -47,7 +47,7 @@ module Tester(pressure[7:0], startPressurization, startDepressurization, clock, 
   		#stimDelay  clock = 'b1;
         #stimDelay  clock = 'b0;
         #stimDelay  clock = 'b1; startPressurization = 'b1;  // advance to state B
-        for (i = 0; i < 28; i++) begin
+        for (i = 0; i < 40; i++) begin
             #stimDelay clock = 'b1;
             #stimDelay clock = 'b0;
         end

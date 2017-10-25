@@ -11,11 +11,15 @@ module Pressure(pressure[7:0], startPressurization, startDepressurization, clock
 
 	always @(posedge clock or posedge reset) begin
 		if (reset)
-			pressure <= 'b11111111;
-		else if (sevenEnable)
-			pressure <= pressure - 'b1;
-		else if (eightEnable)
-			pressure <= pressure + 'b1;
+			pressure <= 'b11000010;
+		else if (sevenEnable) begin
+			if (pressure > 'b0)
+				pressure <= pressure - 'b1;
+		end
+		else if (eightEnable) begin
+			if (pressure < 'b11000010)
+				pressure <= pressure + 'b1;
+		end
 		else
 			pressure <= pressure;
 	end
