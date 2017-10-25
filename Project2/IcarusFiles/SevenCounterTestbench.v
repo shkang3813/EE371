@@ -1,3 +1,5 @@
+`include "SevenCounter.v"
+
 module SevenCounterTestbench();
 	wire clock, reset;
 	wire enable;
@@ -18,8 +20,8 @@ module Tester(enable, clock, reset);
 
 	initial  // Response
   	begin
-	$display("\t\t clock  reset \t output \t    Time ");
-    	$monitor("\t\t %b\t %b  \t %b", clock, reset, out, 
+	$display("\t\t clock  reset \t enable \t    Time ");
+    	$monitor("\t\t %b\t %b  \t %b", clock, reset, enable, 
 								  $time );
   	end
 
