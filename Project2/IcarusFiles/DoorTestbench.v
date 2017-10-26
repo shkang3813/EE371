@@ -1,10 +1,10 @@
 `include "Door.v"
 
 module DoorTestbench();
-	wire isClosed, toggle, pressureChanging, clock, reset;
+	wire isClosed, toggle, pressureChanging, clock, reset, wForce;
 
-	Door door(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
-	Tester test(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
+	Door door(isClosed, toggle, pressureChanging, isHighPressure, wForce, clock, reset);
+	Tester test(isClosed, toggle, pressureChanging, isHighPressure, wForce, clock, reset);
 
 	// file for gtkwave
   	initial begin
@@ -24,9 +24,9 @@ endmodule
 4) when the chamber is at high pressure, the
    door will not respond to the toggle
 */
-module Tester(isClosed, toggle, pressureChanging, isHighPressure, clock, reset);
+module Tester(isClosed, toggle, pressureChanging, isHighPressure, wForce, clock, reset);
 	input isClosed;
-	output reg toggle, pressureChanging, isHighPressure, clock, reset;
+	output reg toggle, pressureChanging, isHighPressure, wForce, clock, reset;
 
 	initial  // Response
   	begin
