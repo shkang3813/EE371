@@ -1,0 +1,147 @@
+#! c:/iverilog-x64/bin/vvp
+:ivl_version "10.1 (stable)" "(v10_1_1)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0000000000f2fb50 .scope module, "SevenCounterTestbench" "SevenCounterTestbench" 2 3;
+ .timescale 0 0;
+v00000000010029d0_0 .net "clock", 0 0, v0000000000f24ca0_0;  1 drivers
+v0000000000f86df0_0 .net "enable", 0 0, L_0000000000f87610;  1 drivers
+v0000000000f86ad0_0 .net "reset", 0 0, v0000000001002930_0;  1 drivers
+S_0000000000f359a0 .scope module, "sevenCounter" "SevenCounter" 2 7, 3 3 0, S_0000000000f2fb50;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "enable"
+    .port_info 1 /INPUT 1 "clock"
+    .port_info 2 /INPUT 1 "reset"
+v0000000000f2ff30_0 .net *"_s0", 31 0, L_0000000000f86cb0;  1 drivers
+L_0000000000f876d8 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000000000f2f630_0 .net *"_s3", 28 0, L_0000000000f876d8;  1 drivers
+L_0000000000f87720 .functor BUFT 1, C4<00000000000000000000000000000110>, C4<0>, C4<0>, C4<0>;
+v0000000000f24980_0 .net/2u *"_s4", 31 0, L_0000000000f87720;  1 drivers
+v0000000000f24a20_0 .net "clock", 0 0, v0000000000f24ca0_0;  alias, 1 drivers
+v0000000000f24ac0_0 .var "count", 2 0;
+v0000000000f24b60_0 .net "enable", 0 0, L_0000000000f87610;  alias, 1 drivers
+v0000000000f24c00_0 .net "reset", 0 0, v0000000001002930_0;  alias, 1 drivers
+E_0000000000f35020 .event posedge, v0000000000f24c00_0, v0000000000f24a20_0;
+L_0000000000f86cb0 .concat [ 3 29 0 0], v0000000000f24ac0_0, L_0000000000f876d8;
+L_0000000000f87610 .cmp/eq 32, L_0000000000f86cb0, L_0000000000f87720;
+S_0000000001002670 .scope module, "tester" "Tester" 2 8, 2 17 0, S_0000000000f2fb50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "enable"
+    .port_info 1 /OUTPUT 1 "clock"
+    .port_info 2 /OUTPUT 1 "reset"
+P_0000000000f34b20 .param/l "stimDelay" 0 2 28, +C4<00000000000000000000000000010100>;
+v0000000000f24ca0_0 .var "clock", 0 0;
+v00000000010027f0_0 .net "enable", 0 0, L_0000000000f87610;  alias, 1 drivers
+v0000000001002890_0 .var/i "i", 31 0;
+v0000000001002930_0 .var "reset", 0 0;
+    .scope S_0000000000f359a0;
+T_0 ;
+    %wait E_0000000000f35020;
+    %load/vec4 v0000000000f24c00_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v0000000000f24ac0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0000000000f24ac0_0;
+    %pad/u 32;
+    %cmpi/e 6, 0, 32;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v0000000000f24ac0_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v0000000000f24ac0_0;
+    %addi 1, 0, 3;
+    %assign/vec4 v0000000000f24ac0_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0000000001002670;
+T_1 ;
+    %vpi_call 2 23 "$display", "\011\011 clock  reset \011 enable \011    Time " {0 0 0};
+    %vpi_call 2 24 "$monitor", "\011\011 %b\011 %b  \011 %b", v0000000000f24ca0_0, v0000000001002930_0, v00000000010027f0_0, $time {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0000000001002670;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001002930_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001002930_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000000001002890_0, 0, 32;
+T_2.0 ;
+    %load/vec4 v0000000001002890_0;
+    %cmpi/s 20, 0, 32;
+    %jmp/0xz T_2.1, 5;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %load/vec4 v0000000001002890_0;
+    %pushi/vec4 1, 0, 32;
+    %add;
+    %store/vec4 v0000000001002890_0, 0, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001002930_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001002930_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000000001002890_0, 0, 32;
+T_2.2 ;
+    %load/vec4 v0000000001002890_0;
+    %cmpi/s 20, 0, 32;
+    %jmp/0xz T_2.3, 5;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f24ca0_0, 0, 1;
+    %load/vec4 v0000000001002890_0;
+    %pushi/vec4 1, 0, 32;
+    %add;
+    %store/vec4 v0000000001002890_0, 0, 32;
+    %jmp T_2.2;
+T_2.3 ;
+    %delay 40, 0;
+    %vpi_call 2 47 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0000000000f2fb50;
+T_3 ;
+    %vpi_call 2 12 "$dumpfile", "SevenCounter.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000001, S_0000000000f359a0 {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "SevenCounterTestbench.v";
+    "./SevenCounter.v";
