@@ -1,0 +1,3 @@
+module MinuteCounter(enable, count, clock, reset);
+
+endmodule

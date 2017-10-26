@@ -1,0 +1,87 @@
+// Runs a FSM for the space shuttle departure procedure
+module Departure(busy, startPressurizing, startDepressurizing, wForce,
+        start, isFive, inChamber, odClosed, idClosed, pressure[7:0], clock, reset);
+
+    input start, isFive, inChamber, odClosed, idClosed, clock, reset;
+    input [7:0] pressure;
+    output reg busy, startPressurizing, startDepressurizing, wForce;
+
+    // measures of low and high pressure
+    assign isLowPressure = (pressure < 8'b00000101);
+    assign isHighPressure = (pressure > 8'b01010000 && pressure < 8'b01101110);
+
+    reg [3:0] ps;
+    parameter [3:0]
+        A = 'b0000,
+        B = 'b0001,
+        C = 'b0010,
+        D = 'b0011,
+        E = 'b0100,
+        F = 'b0101,
+        G = 'b0110,
+        H = 'b0111,
+        ;
+
+    always @(posedge clock or posedge reset) begin
+        if (reset) begin
+            startPressurizing <= 'b0;
+            startDepressurizing <= 'b0;
+            wForce <= 'b0;
+            busy <= 'b0;
+            ps   <= A;
+        end
+        else if (ps == A && start) begin
+            busy <= 'b1;  // accept the request, start the workflow
+            ps   <= B;
+        end
+        else if (ps == B && odClosed && idClosed) begin
+        	if (pressure > 8'b01100100)
+            	startDepressurizing <= 'b1;  // doors closed, fix pressure
+            else
+            	startPressurizing <= 'b1;
+            ps <= C;
+        end
+        else if (ps == C && isHighPressure && isFive) begin
+            startDepressurizing <= 'b0;
+            startPressurizing <= 'b0;
+            ps <= D;  // can now open inner door
+        end
+        else if (ps == D && !idClosed) begin
+            wForce <= 'b1;  // door is open, wait for ship to enter
+            ps <= E;
+        end
+        else if (ps == E && inChamber) begin
+            wForce <= 'b0;  // allow doors to close
+            ps <= F;
+        end
+        else if (ps == F && idClosed) begin
+            startDepressurizing <= 'b1;  // door closed, begin depressurizing
+            ps <= G;
+        end
+        else if (ps == G && isLowPressure) begin
+            startDepressurizing <= 'b0;
+            ps <= H;  // chamber has been pressurized, wait for inner door to open
+        end
+        else if (ps == H && !odClosed) begin
+            ps <= I;
+        end
+        else if (ps == I && odClosed) begin
+        	startPressurizing <= 'b1;
+        	ps <= J;
+        end
+        else if (ps == J && isHighPressure) begin
+        	ps <= K;
+        end
+        else if (ps == K && !idClosed) begin
+        	busy <= 'b0;
+        	ps <= A;
+        end
+        else begin
+            startPressurizing <= startPressurizing;
+            startDepressurizing <= startDepressurizing;
+            wForce <= wForce;
+            ps   <= ps;
+            busy <= busy;
+        end
+    end
+endmodule
