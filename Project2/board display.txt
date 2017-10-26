@@ -1,0 +1,65 @@
+
+
+module seg7 (bcd, leds);
+	input logic [3:0] bcd;
+	output logic [6:0] leds;
+
+	//all led combinations for binary 0-9
+	always_comb	
+		case (bcd)
+			//			   Light: 6543210
+			4'b0000: leds = 7'b0000001; // 0
+			4'b0001: leds = 7'b1111001; // 1
+			4'b0010: leds = 7'b0100100; // 2
+			4'b0011: leds = 7'b0110000; // 3
+			4'b0100: leds = 7'b0011001; // 4
+			4'b0101: leds = 7'b0010010; // 5
+			4'b0110: leds = 7'b0000010; // 6
+			4'b0111: leds = 7'b1111000; // 7
+			4'b1000: leds = 7'b0000000; // 8
+			4'b1001: leds = 7'b0010000; // 9
+			default: leds = 7'bX;
+		endcase
+endmodule 
+
+
+
+module bcd(number, HEXwrite);
+   input logic [7:0] number;
+   logic [3:0] hundreds, tens, ones;
+   output logic [11:0] HEXwrite;
+   
+   // Internal variable for storing bits
+   reg [19:0] shift;
+   integer i;
+   
+   always @(number)
+   begin
+      // Clear previous number and store new number in shift register
+      shift[19:8] = 0;
+      shift[7:0] = number;
+      
+      // Loop eight times
+      for (i=0; i<8; i=i+1) begin
+         if (shift[11:8] >= 5)
+            shift[11:8] = shift[11:8] + 3;
+            
+         if (shift[15:12] >= 5)
+            shift[15:12] = shift[15:12] + 3;
+            
+         if (shift[19:16] >= 5)
+            shift[19:16] = shift[19:16] + 3;
+         
+         // Shift entire register left once
+         shift = shift << 1;
+      end
+      
+      // Push decimal numbers to output
+      hundreds = shift[19:16];
+      tens     = shift[15:12];
+      ones     = shift[11:8];
+	  
+	  assign HEXwrite = {hundreds, tens, ones};
+   end
+   
+endmodule
