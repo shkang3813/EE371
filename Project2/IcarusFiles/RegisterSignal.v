@@ -4,38 +4,29 @@ module RegisterSignal(out, in, clock, reset);
 	input in, clock, reset;
 	output reg out;
 
-	reg ps, ns;
-	parameter A = 'b0, B = 'b1;
-
-	always @(posedge clock) begin
-		case (ps)
-		A:  if (in) begin
-				ns  = B;
-				out = 'b1;
-		    end
-		    else begin
-		   		ns  = A;
-		   		out = 'b0;
-		    end
-		B:  if (in) begin
-				ns  = B;
-				out = 'b0;
-			end
-			else begin
-				ns  = A;
-				out = 'b0;
-			end
-		default: ns = 'bx;
-		endcase
-	end
+	reg[1:0] ps;
+	parameter[1:0] A = 2'b00, B = 2'b01, C = 2'b10;
 
 	always @(posedge clock or posedge reset) begin
 		if (reset) begin
-			out = 'b0;
-			ps = A;
+			ps <= A;
+			out <= 0;
 		end
-		else	
-			ps = ns;
+		else if (ps == A && in) begin
+			ps <= B;
+			out <= 1;
+		end
+		else if (ps == B) begin
+			if (in)
+				ps <= C;
+			else
+				ps <= A;
+			out <= 0;
+		end
+		else if (ps == C && !in)
+			ps <= A;
+		else
+			ps <= ps;
 	end
 
 endmodule

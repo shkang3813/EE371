@@ -1,34 +1,41 @@
 `include "Door.v"
 `include "Pressure.v"
+`include "FiveCounter.v"
 `include "ArrivalWorkflow.v"
 `include "DepartureWorkflow.v"
 
 module SystemInterface(idClosed, odClosed, pressure[7:0], arrival, departure,
-		startArrival, startDeparture, inChamber, idToggle, odToggle, clock, reset);
-	input startArrival, startDeparture, inChamber, idToggle, odToggle, clock, reset;
+		startArrival, startDeparture, idToggle, odToggle, clock, reset);
+	// System inputs and outputs
+	input startArrival, startDeparture, idToggle, odToggle, clock, reset;
 	output idClosed, odClosed, arrival, departure;
 	output[7:0] pressure;
 
-	wire arrivalForce, departureForce;  // workflows can force parts of the system to freeze
-	assign wForce = arrivalForce || departureForce;
-
 	// Pressure
-	wire startPressurizing, startDepressurizing;
-	Pressure pressureTracker(pressure, startPressurizing, startDepressurizing, clock, reset);
+	wire aStartPress, aStartDepress, dStartPress, dStartDepress;
+	Pressure pressureTracker(pressure, (aStartPress || dStartPress),
+			(aStartDepress || dStartDepress), clock, reset);
 
 	// Doors and door inputs
-	wire pressureChanging;
-	assign pressureChanging = startPressurizing || startDepressurizing;
-	assign isLowPressure = (pressure < 'b00000101);  // pressure less than .1
-	assign isHighPressure = (pressure > 'b01010000);  // pressure greater than .9
-	Door id(idClosed, idToggle, pressureChanging, isHighPressure, wForce, clock, reset);
-	Door od(odClosed, odToggle, pressureChanging, isLowPressure, wForce, clock, reset);
+	wire pressureChanging, isLowPressure, isHighPressure;
+	assign pressureChanging = aStartPress || aStartDepress || dStartPress || dStartDepress;
+	assign isLowPressure = (pressure < 8'b00001010);  // pressure less than .1
+	assign isHighPressure = (pressure > 8'b01010000 && pressure < 8'b01101110);  // pressure greater than .9
+	Door id(idClosed, idToggle, pressureChanging, isHighPressure, clock, reset);
+	Door od(odClosed, odToggle, pressureChanging, isLowPressure, clock, reset);
 
 	// Workflows
 	wire arrivalBusy, departureBusy;
 	assign arrival = arrivalBusy;
 	assign departure = departureBusy;
-	reg isFive = 'b1;
-	ArrivalWorkflow arrivalWorkflow(arrivalBusy, startPressurizing, startDepressurizing,
-			arrivalForce, (startArrival && !arrivalBusy && !departureBusy), isFive, inChamber, odClosed, idClosed, pressure, clock, reset);
+	wire isFive, fiveCounterActive;
+	assign fiveCounterActive = (startArrival || startDeparture
+			|| arrivalBusy || departureBusy);  // want the counter to start right at the start of signal
+	FiveCounter fiveCounter(isFive, clock, ~fiveCounterActive);
+	ArrivalWorkflow arrivalWorkflow(arrivalBusy, aStartPress, aStartDepress,
+			(startArrival && !arrivalBusy && !departureBusy), isFive,
+			odClosed, idClosed, pressure, clock, reset);
+	DepartureWorkflow departureWorkflow(departureBusy, dStartPress, dStartDepress,
+			(startDeparture && !arrivalBusy && !departureBusy), isFive,
+			odClosed, idClosed, pressure, clock, reset);
 endmodule
