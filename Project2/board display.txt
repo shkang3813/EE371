@@ -24,7 +24,7 @@ endmodule
 
 
 
-module bcd(number, HEXwrite);
+module con8to12(number, HEXwrite);
    input logic [7:0] number;
    logic [3:0] hundreds, tens, ones;
    output logic [11:0] HEXwrite;
