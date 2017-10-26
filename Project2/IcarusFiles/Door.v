@@ -1,24 +1,24 @@
 `include "RegisterSignal.v"
 
-module Door(isClosed, toggle, pressureChanging, isHighPressure,
-		clock, reset);
-	input toggle, pressureChanging, isHighPressure, clock, reset;
+module Door(isClosed, toggle, pressureChanging, isCorrectPressure, wForce, clock, reset);
+	input toggle, pressureChanging, isCorrectPressure, wForce, clock, reset;
 	output reg isClosed;
 
 	// used so that a toggle signal is not registered more than once
 	wire actualToggle;
-	RegisterSignal register(actualToggle, toggle, clock,  reset);
+	RegisterSignal register(actualToggle, toggle, clock, reset);
 
 	always @(posedge clock or posedge reset) begin
-		if (reset) begin
+		if (reset)
 			isClosed <= 'b1;
-		end
-		else if (pressureChanging || isHighPressure) begin
+		else if (wForce)
+			isClosed <= isClosed;
+		else if (pressureChanging || !isCorrectPressure)
 			isClosed <= 'b1;
-		end
-		else if (actualToggle) begin
+		else if (actualToggle)
 			isClosed <= ~isClosed;
-		end
+		else
+			isClosed <= isClosed;
 	end
 
 endmodule
