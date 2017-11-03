@@ -2,7 +2,6 @@
 #include <string.h>
 
 int main() {
-	// Part 1
 	double value;
 	char currentScale[2];
 	char outputScale[2];
@@ -20,6 +19,7 @@ int main() {
     int selection = strcmp(currentScale, f);
     int next = strcmp(outputScale, f);
     // current is Celsius
+    printf("Converted Value: ");
     if (selection < 0) {
     	if (next < 0) {
     		printf("%f", value);
