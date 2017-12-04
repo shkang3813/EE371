@@ -9,8 +9,8 @@ module sendblock(clk, reset, transmiting, load, busin, outbit, whichbit);
 	output logic [3:0] whichbit;
 	
 	logic midpoint;
-	BSC bitcounter (.clk, .reset, .transmiting, .midpoint);
-	BIC bitidenity (.reset, .transmiting, .midpoint, .count(whichbit));
+	SendBSC bitcounter (.clk, .reset, .transmiting, .midpoint);
+	SendBIC bitidenity (.reset, .transmiting, .midpoint, .count(whichbit));
 	logic srclk;
 	SRclock thisclock (.midpoint, .srclk);
 	par2seri sendingblk (.clk, .srclk, .load, .reset, .busin, .outbit);
@@ -23,7 +23,7 @@ endmodule
 
 
 //deturmans when bits are read
-module BSC(clk, reset, transmiting, midpoint);
+module SendBSC(clk, reset, transmiting, midpoint);
 	input logic clk, reset, transmiting;
 	output logic midpoint;
 	
@@ -33,13 +33,15 @@ module BSC(clk, reset, transmiting, midpoint);
 			count <= 0;
 		end else if(transmiting) begin
 			count <= count + 4'b1;
-		end else
+		end else begin
 			count <= 0;
 		end
-		
+	end
+	
+	always_ff @(posedge clk) begin
 		if(count == 4'b0111) begin
 			midpoint <= 1;
-		end else
+		end else begin
 			midpoint <= 0;
 		end
 	end
@@ -48,7 +50,7 @@ endmodule
 
 //keeps track of which bit will be sent next ie. 0000 means the next bit sent will be a start bit 
 //count is character sent
-module BIC(reset, transmiting, midpoint, count);
+module SendBIC(reset, transmiting, midpoint, count);
 	input logic reset, transmiting, midpoint;
 	output logic [3:0] count;
 	
@@ -56,7 +58,7 @@ module BIC(reset, transmiting, midpoint, count);
 		if(reset) begin
 			count <= 0;
 		end else if (transmiting & ~(count == 4'b1001)) begin
-			count <= count + 1;
+			count <= count + 1'b1;
 		end else if (count == 4'b1001) begin
 			count <= 0;
 		end
@@ -82,21 +84,21 @@ endmodule
 module par2seri(clk, srclk, load, reset, busin, outbit);
 	input logic clk, srclk, load, reset;
 	input logic [7:0] busin;
-	output logic outbit
+	output logic outbit;
 	
 	logic [3:0] count, count2, count3;
-	logic full;
+	//logic full;
 	
 	always_ff @(negedge load) begin
 		if(reset) begin
 			count <= 0;
-			full <= 0;
+		//	full <= 0;
 		end else if (~(count == 4'b1001)) begin
-			count <= count + 1;
-			full <= 0;
+			count <= count + 1'b1;
+		//	full <= 0;
 		end else if (count == 4'b1001) begin
 			count <= 0;
-			full <= 1;
+		//	full <= 1;
 		end
 	end
 	
@@ -105,35 +107,54 @@ module par2seri(clk, srclk, load, reset, busin, outbit);
 			count2 <= 0;
 			count3 <= 0;
 		end else if (~(count2 == 4'b1001)) begin
-			count2 <= count2 + 1;
+			count2 <= count2 + 1'b1;
 		end else if (count2 == 4'b1001) begin
 			count2 <= 0;
 			if (count3 == 4'b1001) begin
-				if ((full == 0) & (count == count3)) begin
-					count3 <= count3;
-				end else begin
+				//if (/*(full == 0) & */(count == count3)) begin
+				//	count3 <= count3;
+				//end else begin
 					count3 <= 0;
-					full <= 0;
-				end
+					//full <= 0;
+				//end
 			end else begin
-				if ((full == 0) & (count == count3)) begin
-					count3 <= count3;
-				end else begin
+				//if (/*(full == 0) & */(count == count3)) begin
+				//	count3 <= count3;
+				//end else begin
 					count3 <= count3 + 4'b1;
-				end
+				//end
 			end
 		end
 	end
+	/*
+	always_ff @(posedge srclk or negedge load)begin
+		if(reset) begin
+			full <= 0;
+		end else if (~(count == 4'b1001)) begin
+			full <= 0;
+		end else if (count == 4'b1001) begin
+			full <= 1;
+		end
+		
+		if (count3 == 4'b1001) begin
+			if (~((full == 0) & (count == count3))) begin
+				full <= 0;
+			end 
+		end 
+		
+	end
+	*/
+	
 	
 	logic [9:0] holder;
-	logic [7:0] readdata
+	logic [7:0] readdata;
 	always_ff @(posedge srclk) begin
 		if (reset) begin
 			holder <= 0;
 		end else if (count2 == 4'b0000) begin
-			if((full == 1) | ~(count == count3)) begin
+			//if((full == 1) | ~(count == count3)) begin
 				holder <= {1'b1, readdata, 1'b0};
-			end
+			//end
 		end else begin
 			holder[9] <= holder [8];
 			holder[8] <= holder [7];
@@ -147,7 +168,7 @@ module par2seri(clk, srclk, load, reset, busin, outbit);
 			end
 	end
 		
-	tenbytebuffer outbuff (.read(count3), .write(count), .dataWr(busin), .clk, .writeEn(load), .reset, .readdata);
+	tenByteBuffer outbuff (.read(count3), .write(count), .dataWr(busin), .clk, .writeEn(load), .reset, .readdata);
 	
 	assign outbit = holder[9];
 	
@@ -164,32 +185,32 @@ endmodule
 //writeEn enables the overwrite
 //readdata gives the data stored at the location picked by read
 
-module tenbytebuffer (read, write, dataWr, clk, writeEn, reset, readdata);
+module tenByteBuffer (read, write, dataWr, clk, writeEn, reset, readdata);
 	input logic [3:0] read, write;
 	input logic [7:0] dataWr;
 	input logic clk, writeEn, reset;
 	output logic [7:0] readdata;
 	
 	logic [9:0] enWr;
-	decoder de (.in(write), .out(enWr));
+	sendDecoder de (.in(write), .out(enWr));
 	
 	logic [9:0][7:0] datakept;
 	
 	genvar i;
 	generate
 		for (i=0; i<10; i++) begin : eachdata
-			build bil (.enable(enWr), .writeEn, .reset, .clk, .dataWr, .dataHeld(datakept[i][7:0]));
+			sendBuild bil (.enable(enWr), .writeEn(writeEn), .reset(reset), .clk(clk), .dataWr(dataWr), .dataHeld(datakept[i][7:0]));
 		end
 	endgenerate
 	
-	readpross re (.read, .dataCurrent(datakept), .readout(readdata));
+	sendReadpross re (.read(read), .dataCurrent(datakept), .readout(readdata));
 	
 endmodule
 
 
-module decoder(in, out);
+module sendDecoder(in, out);
 	
-	input logic [3:0] in
+	input logic [3:0] in;
 	output logic [9:0] out;
 	
 	assign out[0] = (~in[3] & ~in[2] & ~in[1] & ~in[0]);
@@ -206,7 +227,7 @@ module decoder(in, out);
 endmodule 
 
 
-module build (enable, writeEn, reset, clk, dataWr, dataHeld);
+module sendBuild (enable, writeEn, reset, clk, dataWr, dataHeld);
 	input logic enable, writeEn, reset, clk;
 	input logic [7:0] dataWr;
 	output logic [7:0] dataHeld;
@@ -217,14 +238,14 @@ module build (enable, writeEn, reset, clk, dataWr, dataHeld);
 	genvar i;
 	generate
 		for(i=0; i<8; i++) begin : eachdff
-			impD_FF reg(.enab(go), .newinput(dataWr[i]), .reset, .clk, .valueout(dataHeld[i]));
+			sendImpsendD_FF currentReg(.enab(go), .newinput(dataWr[i]), .reset(reset), .clk(clk), .valueout(dataHeld[i]));
 		end
 	endgenerate
 	
 endmodule
 
 
-module impD_FF (enab, newinput, reset, clk, valueout);
+module sendImpsendD_FF (enab, newinput, reset, clk, valueout);
 
 	input enab, newinput, reset, clk;
 	output valueout;
@@ -237,13 +258,13 @@ module impD_FF (enab, newinput, reset, clk, valueout);
 	and a1 (a, newinput, enab);
 	and a2 (b, oldinput, notenab);
 	or o1 (c, a, b);
-	D_FF regi (.q(oldinput), .d(c), .reset, .clk);
+	sendD_FF regi (.q(oldinput), .d(c), .reset(reset), .clk(clk));
 	assign valueout = oldinput;
 	
 endmodule
 
 
-module D_FF (q, d, reset, clk);
+module sendD_FF (q, d, reset, clk);
 	output reg q;
 	input d, reset, clk;
 	
@@ -255,19 +276,19 @@ module D_FF (q, d, reset, clk);
 endmodule 
 
 
-module readpross (read, dataCurrent, readout);
+module sendReadpross (read, dataCurrent, readout);
 	input [3:0] read;
 	input [9:0][7:0] dataCurrent;
 	output [7:0] readout;
 	
 	logic [9:0] active;
-	decoder decRead(.in(read), .out(active));
+	sendDecoder decRead(.in(read), .out(active));
 
 	genvar i;
 	generate 
 		for(i=0; i<8; i++) begin : eachbit
 		
-			muxthis condence (.bt({dataCurrent[9][i], dataCurrent[8][i], 
+			sendMuxthis condence (.bt({dataCurrent[9][i], dataCurrent[8][i], 
 				dataCurrent[7][i], dataCurrent[6][i], dataCurrent[5][i],
 				dataCurrent[4][i], dataCurrent[3][i], dataCurrent[2][i],
 				dataCurrent[1][i], dataCurrent[0][i]}),
@@ -279,7 +300,7 @@ module readpross (read, dataCurrent, readout);
 endmodule
 
 
-module muxthis (bt, active, readoutbit);
+module sendMuxthis (bt, active, readoutbit);
 	input logic [9:0] bt, active;
 	output logic readoutbit;
 	

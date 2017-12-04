@@ -30,7 +30,7 @@ endmodule
 
 module decoder(in, out);
 	
-	input logic [3:0] in
+	input logic [3:0] in;
 	output logic [9:0] out;
 	
 	assign out[0] = (~in[3] & ~in[2] & ~in[1] & ~in[0]);
@@ -58,7 +58,7 @@ module build (enable, writeEn, reset, clk, dataWr, dataHeld);
 	genvar i;
 	generate
 		for(i=0; i<8; i++) begin : eachdff
-			impD_FF reg(.enab(go), .newinput(dataWr[i]), .reset, .clk, .valueout(dataHeld[i]));
+			impD_FF regCurrent(.enab(go), .newinput(dataWr[i]), .reset, .clk, .valueout(dataHeld[i]));
 		end
 	endgenerate
 	
