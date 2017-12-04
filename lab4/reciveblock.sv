@@ -1,6 +1,22 @@
 
 
-
+module reciveblock (insignal, reset, clk, whichbit, byterecived);
+	input logic insignal, reset, clk;
+	output logic [3:0] whichbit;
+	output logic [7:0] byterecived;
+	
+	logic starter;
+	startreader st (.insignal, .starter);
+	logic midpoint;
+	BSC btcount(.clk, .reset, .transmiting(starter), .midpoint);
+	BIC bittracker (.reset, .transmiting(starter), .midpoint, .count(whichbit));
+	logic srclk;
+	SRclock thisclk(.midpoint, .srclk);
+	seri2par converseri (.insignal, .srclk, .byterecived);
+	
+	
+	
+endmodule
 
 
 
