@@ -1,8 +1,8 @@
 
 
 
-module pari2seri(load, srclk, databyte, outbit);
-	input logic load, srclk;
+module pari2seri(load, srclk, reset, databyte, outbit);
+	input logic load, srclk, reset;
 	input logic [7:0] databyte;
 	output logic outbit;
 	
@@ -10,7 +10,7 @@ module pari2seri(load, srclk, databyte, outbit);
 	logic [3:0] count, count2, count3;
 	logic [9:0] senddata;
 	
-	always_ff @(posedge load) begin
+	always_ff @(posedge load or posedge reset) begin
 		if(reset)begin
 			dataheld[0] <= 0;
 			dataheld[1] <= 0;
@@ -59,7 +59,7 @@ module pari2seri(load, srclk, databyte, outbit);
 	end
 	
 	
-	always_ff @(posedge srclk) begin
+	always_ff @(posedge srclk or posedge reset) begin
 		if(reset) begin
 			count2 <= 0;
 			count3 <= 0;
@@ -75,30 +75,30 @@ module pari2seri(load, srclk, databyte, outbit);
 		end
 	end
 	
-	always_ff @(posedge srclk) begin
+	always_ff @(posedge srclk or posedge reset) begin
 		if(reset) begin
 			senddata <= 0;
 		end else if (count2 == 0)begin
 			if(count3 == 0) begin
-				senddata <= {1'b1, dataheld[0], 0'b0};
+				senddata <= {1'b1, dataheld[0], 1'b0};
 			end else if (count3 == 1) begin
-				senddata <= {1'b1, dataheld[1], 0'b0};
+				senddata <= {1'b1, dataheld[1], 1'b0};
 			end else if (count3 == 2) begin
-				senddata <= {1'b1, dataheld[2], 0'b0};
+				senddata <= {1'b1, dataheld[2], 1'b0};
 			end else if (count3 == 3) begin
-				senddata <= {1'b1, dataheld[3], 0'b0};
+				senddata <= {1'b1, dataheld[3], 1'b0};
 			end else if (count3 == 4) begin
-				senddata <= {1'b1, dataheld[4], 0'b0};
+				senddata <= {1'b1, dataheld[4], 1'b0};
 			end else if (count3 == 5) begin
-				senddata <= {1'b1, dataheld[5], 0'b0};
+				senddata <= {1'b1, dataheld[5], 1'b0};
 			end else if (count3 == 6) begin
-				senddata <= {1'b1, dataheld[6], 0'b0};
+				senddata <= {1'b1, dataheld[6], 1'b0};
 			end else if (count3 == 7) begin
-				senddata <= {1'b1, dataheld[7], 0'b0};
+				senddata <= {1'b1, dataheld[7], 1'b0};
 			end else if (count3 == 8) begin
-				senddata <= {1'b1, dataheld[8], 0'b0};
+				senddata <= {1'b1, dataheld[8], 1'b0};
 			end else if (count3 == 9) begin
-				senddata <= {1'b1, dataheld[9], 0'b0};
+				senddata <= {1'b1, dataheld[9], 1'b0};
 			end 
 		end else begin
 			senddata[9] <= senddata[8];
@@ -120,11 +120,11 @@ endmodule
 
 
 module pari2seri_testbench();
-	logic load, srclk;
+	logic load, srclk, reset;
 	logic [7:0] databyte;
 	logic outbit;
 	
-	pari2seri dut (.load, .srclk, .databyte, .outbit);
+	pari2seri dut (.load, .srclk, .reset, .databyte, .outbit);
 	
 	
 	integer i;
@@ -134,24 +134,25 @@ module pari2seri_testbench();
 		load <= 0;
 		srclk <= 0;
 		databyte <= 0;
-		#1000
+		#1000;
 		reset <= 0;
-		#1000
+		#1000;
 		
 		
 		for(i=0; i<10; i++)begin
 			load <= 1;
 			databyte[7:0] = i;
-			#500
+			#500;
 			load <= 0;
-			#500
+			#500;
+			
 		end
 		
 		for(i=0; i<400; i++)begin
 			srclk <= 1;
-			#500
+			#40;
 			srclk <= 0;
-			#500
+			#800;
 		end
 		
 

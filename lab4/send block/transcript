@@ -1,0 +1,395 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:16 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 17:50:17 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:17 on Dec 05,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# ** Error: (vlog-7) Failed to open design unit file "./reciveblock.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 17:50:17 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 8
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./reciveblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:54:18 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 17:54:18 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:54:18 on Dec 05,2017
+# vlog -reportprogress 300 ./BSC.sv 
+# -- Compiling module BSC
+# 
+# Top level modules:
+# 	BSC
+# End time: 17:54:19 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:54:19 on Dec 05,2017
+# vlog -reportprogress 300 ./BIC.sv 
+# -- Compiling module BIC
+# 
+# Top level modules:
+# 	BIC
+# End time: 17:54:19 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:54:19 on Dec 05,2017
+# vlog -reportprogress 300 ./SRclock.sv 
+# -- Compiling module SRclock
+# 
+# Top level modules:
+# 	SRclock
+# End time: 17:54:20 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:54:20 on Dec 05,2017
+# vlog -reportprogress 300 ./pari2seri.sv 
+# -- Compiling module pari2seri
+# -- Compiling module pari2seri_testbench
+# 
+# Top level modules:
+# 	pari2seri_testbench
+# End time: 17:54:21 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pari2seri_testbench 
+# Start time: 17:54:21 on Dec 05,2017
+# Loading sv_std.std
+# Loading work.pari2seri_testbench
+# Loading work.pari2seri
+# ** Error: Cannot open macro file: pari2seri_testbench_wave.do
+# Error in macro ./runlab.do line 22
+# Cannot open macro file: pari2seri_testbench_wave.do
+#     while executing
+# "do pari2seri_testbench_wave.do"
+add wave -position insertpoint  \
+sim:/pari2seri_testbench/load \
+sim:/pari2seri_testbench/srclk \
+sim:/pari2seri_testbench/reset \
+sim:/pari2seri_testbench/databyte \
+sim:/pari2seri_testbench/outbit
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {U:/send block/pari2seri_testbench_wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:55:35 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 17:55:36 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:55:36 on Dec 05,2017
+# vlog -reportprogress 300 ./BSC.sv 
+# -- Compiling module BSC
+# 
+# Top level modules:
+# 	BSC
+# End time: 17:55:37 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:55:37 on Dec 05,2017
+# vlog -reportprogress 300 ./BIC.sv 
+# -- Compiling module BIC
+# 
+# Top level modules:
+# 	BIC
+# End time: 17:55:37 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:55:37 on Dec 05,2017
+# vlog -reportprogress 300 ./SRclock.sv 
+# -- Compiling module SRclock
+# 
+# Top level modules:
+# 	SRclock
+# End time: 17:55:38 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:55:38 on Dec 05,2017
+# vlog -reportprogress 300 ./pari2seri.sv 
+# -- Compiling module pari2seri
+# -- Compiling module pari2seri_testbench
+# 
+# Top level modules:
+# 	pari2seri_testbench
+# End time: 17:55:39 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 17:55:40 on Dec 05,2017, Elapsed time: 0:01:19
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pari2seri_testbench 
+# Start time: 17:55:40 on Dec 05,2017
+# Loading sv_std.std
+# Loading work.pari2seri_testbench
+# Loading work.pari2seri
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./pari2seri.sv(158)
+#    Time: 412 ns  Iteration: 0  Instance: /pari2seri_testbench
+# Break in Module pari2seri_testbench at ./pari2seri.sv line 158
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:58:14 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 17:58:15 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:58:15 on Dec 05,2017
+# vlog -reportprogress 300 ./BSC.sv 
+# -- Compiling module BSC
+# 
+# Top level modules:
+# 	BSC
+# End time: 17:58:15 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:58:15 on Dec 05,2017
+# vlog -reportprogress 300 ./BIC.sv 
+# -- Compiling module BIC
+# 
+# Top level modules:
+# 	BIC
+# End time: 17:58:16 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:58:16 on Dec 05,2017
+# vlog -reportprogress 300 ./SRclock.sv 
+# -- Compiling module SRclock
+# 
+# Top level modules:
+# 	SRclock
+# End time: 17:58:16 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:58:16 on Dec 05,2017
+# vlog -reportprogress 300 ./pari2seri.sv 
+# -- Compiling module pari2seri
+# -- Compiling module pari2seri_testbench
+# 
+# Top level modules:
+# 	pari2seri_testbench
+# End time: 17:58:17 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 17:58:18 on Dec 05,2017, Elapsed time: 0:02:38
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pari2seri_testbench 
+# Start time: 17:58:18 on Dec 05,2017
+# Loading sv_std.std
+# Loading work.pari2seri_testbench
+# Loading work.pari2seri
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./pari2seri.sv(162)
+#    Time: 422 ns  Iteration: 0  Instance: /pari2seri_testbench
+# Break in Module pari2seri_testbench at ./pari2seri.sv line 162
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:00:06 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 18:00:08 on Dec 05,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:00:08 on Dec 05,2017
+# vlog -reportprogress 300 ./BSC.sv 
+# -- Compiling module BSC
+# 
+# Top level modules:
+# 	BSC
+# End time: 18:00:08 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:00:08 on Dec 05,2017
+# vlog -reportprogress 300 ./BIC.sv 
+# -- Compiling module BIC
+# 
+# Top level modules:
+# 	BIC
+# End time: 18:00:09 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:00:09 on Dec 05,2017
+# vlog -reportprogress 300 ./SRclock.sv 
+# -- Compiling module SRclock
+# 
+# Top level modules:
+# 	SRclock
+# End time: 18:00:10 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:00:10 on Dec 05,2017
+# vlog -reportprogress 300 ./pari2seri.sv 
+# -- Compiling module pari2seri
+# -- Compiling module pari2seri_testbench
+# 
+# Top level modules:
+# 	pari2seri_testbench
+# End time: 18:00:10 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:00:11 on Dec 05,2017, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pari2seri_testbench 
+# Start time: 18:00:11 on Dec 05,2017
+# Loading sv_std.std
+# Loading work.pari2seri_testbench
+# Loading work.pari2seri
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./pari2seri.sv(162)
+#    Time: 422 ns  Iteration: 0  Instance: /pari2seri_testbench
+# Break in Module pari2seri_testbench at ./pari2seri.sv line 162
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:24 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 18:06:24 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:24 on Dec 05,2017
+# vlog -reportprogress 300 ./BSC.sv 
+# -- Compiling module BSC
+# 
+# Top level modules:
+# 	BSC
+# End time: 18:06:25 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:25 on Dec 05,2017
+# vlog -reportprogress 300 ./BIC.sv 
+# -- Compiling module BIC
+# 
+# Top level modules:
+# 	BIC
+# End time: 18:06:26 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:26 on Dec 05,2017
+# vlog -reportprogress 300 ./SRclock.sv 
+# -- Compiling module SRclock
+# 
+# Top level modules:
+# 	SRclock
+# End time: 18:06:26 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:26 on Dec 05,2017
+# vlog -reportprogress 300 ./pari2seri.sv 
+# -- Compiling module pari2seri
+# -- Compiling module pari2seri_testbench
+# 
+# Top level modules:
+# 	pari2seri_testbench
+# End time: 18:06:27 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:06:28 on Dec 05,2017, Elapsed time: 0:06:17
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pari2seri_testbench 
+# Start time: 18:06:28 on Dec 05,2017
+# Loading sv_std.std
+# Loading work.pari2seri_testbench
+# Loading work.pari2seri
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./pari2seri.sv(162)
+#    Time: 358 ns  Iteration: 0  Instance: /pari2seri_testbench
+# Break in Module pari2seri_testbench at ./pari2seri.sv line 162
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:12:29 on Dec 05,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# 
+# Top level modules:
+# 	sendblock
+# End time: 18:12:29 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:12:30 on Dec 05,2017
+# vlog -reportprogress 300 ./BSC.sv 
+# -- Compiling module BSC
+# 
+# Top level modules:
+# 	BSC
+# End time: 18:12:30 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:12:30 on Dec 05,2017
+# vlog -reportprogress 300 ./BIC.sv 
+# -- Compiling module BIC
+# 
+# Top level modules:
+# 	BIC
+# End time: 18:12:31 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:12:31 on Dec 05,2017
+# vlog -reportprogress 300 ./SRclock.sv 
+# -- Compiling module SRclock
+# 
+# Top level modules:
+# 	SRclock
+# End time: 18:12:31 on Dec 05,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:12:31 on Dec 05,2017
+# vlog -reportprogress 300 ./pari2seri.sv 
+# -- Compiling module pari2seri
+# -- Compiling module pari2seri_testbench
+# 
+# Top level modules:
+# 	pari2seri_testbench
+# End time: 18:12:32 on Dec 05,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:12:33 on Dec 05,2017, Elapsed time: 0:06:05
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pari2seri_testbench 
+# Start time: 18:12:33 on Dec 05,2017
+# Loading sv_std.std
+# Loading work.pari2seri_testbench
+# Loading work.pari2seri
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./pari2seri.sv(159)
+#    Time: 348 ns  Iteration: 0  Instance: /pari2seri_testbench
+# Break in Module pari2seri_testbench at ./pari2seri.sv line 159
+# End time: 18:16:38 on Dec 05,2017, Elapsed time: 0:04:05
+# Errors: 0, Warnings: 0
