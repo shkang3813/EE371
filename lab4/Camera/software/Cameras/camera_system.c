@@ -90,16 +90,45 @@ char getChar(int ten) {
 	return (char) (ten - 1 + 48);
 }
 
+int display(char data) {
+	if (data == '-') {
+		return 64;
+	} else if (data == '0') {
+		return 63;
+	} else if (data == '1') {
+		return 6;
+	} else if (data == '2') {
+		return 91;
+	} else if (data == '3') {
+		return 79;
+	} else if (data == '4') {
+		return 102;
+	} else if (data == '5') {
+		return 109;
+	} else if (data == '6') {
+		return 125;
+	} else if (data == '7') {
+		return 7;
+	} else if (data == '8') {
+		return 127;
+	} else {
+		return 103;
+	}
+}
+
 int main() {
 	alt_putstr("Welcome! Type \'S\' to start the camera system...");
 	char in = alt_getchar();
-	while (in != 'S')
+	while (in != 'S') {
 		in = alt_getchar();
+	}
 	IOWR_ALTERA_AVALON_PIO_DATA(START_BASE, 1);
 	IOWR_ALTERA_AVALON_PIO_DATA(DOWNLOAD1_BASE, 1);
 	IOWR_ALTERA_AVALON_PIO_DATA(DOWNLOAD2_BASE, 1);
 
 	char data1 = '-', data2 = '-';
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, ~display(data1));
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX2_BASE, ~display(data2));
 	printf("Buffer 1: %c   Buffer 2: %c\n", data1, data2);
 	while (1) {
 		char cur1 = getChar(IORD_ALTERA_AVALON_PIO_DATA(TENOUT1_BASE));
@@ -109,7 +138,11 @@ int main() {
 			data1 = cur1;
 			data2 = cur2;
 		}
+		IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, ~display(data1));
+		IOWR_ALTERA_AVALON_PIO_DATA(HEX2_BASE, ~display(data2));
 	}
 	return 0;
 }
+
+
 

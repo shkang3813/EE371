@@ -3,7 +3,7 @@ module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX2);
 	input logic [3:0] KEY;
 	input logic [9:0] SW;
 	input logic CLOCK_50;
-	input logic [6:0] HEX5, HEX2;
+	output logic [6:0] HEX5, HEX2;
 	
 	logic rtd1, rtd2, start, download1, download2;
 	logic [5:0] camState1, camState2;

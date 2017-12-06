@@ -48,11 +48,12 @@ module countercam (up, down, clk, reset, count, data);
 
 endmodule
 
-module hundredToTen(hundred, ten);
+module hundredToTen(hundred, ten, down);
+	input wire down;
 	input wire [6:0] hundred;
 	output wire [3:0] ten;
 	
-	assign ten = hundred / 10;
+	assign ten = down ? (hundred == 100 ? 10 : (hundred + 10) / 10) : hundred / 10;
 
 endmodule
 
