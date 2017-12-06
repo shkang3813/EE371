@@ -8,18 +8,21 @@ vlog "./sendblock.sv"
 vlog "./BSC.sv"
 vlog "./BIC.sv"
 vlog "./SRclock.sv"
-vlog "./pari2seri.sv"
+vlog "./reciveblock.sv"
+vlog "./startblock.sv"
+vlog "./seri2pari.sv"
+
 
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
 #vsim -voptargs="+acc" -t 1ps -lib work alustim
-vsim -voptargs="+acc" -t 1ps -lib work pari2seri_testbench
+vsim -voptargs="+acc" -t 1ps -lib work seri2pari_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do pari2seri_testbench_wave.do
+do seri2pari_testbench_wave.do
 #do alustim_wave.do
 # Set the window types
 view wave

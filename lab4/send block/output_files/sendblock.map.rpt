@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sendblock
-Tue Dec 05 17:43:30 2017
+Tue Dec 05 19:48:56 2017
 Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
 
 
@@ -16,10 +16,9 @@ Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "pari2seri:ps1"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +45,14 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 05 17:43:29 2017           ;
+; Analysis & Synthesis Status     ; Successful - Tue Dec 05 19:48:55 2017           ;
 ; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Standard Edition ;
 ; Revision Name                   ; sendblock                                       ;
-; Top-level Entity Name           ; sendblock                                       ;
+; Top-level Entity Name           ; reciveblock                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 114                                             ;
-; Total pins                      ; 17                                              ;
+; Total registers                 ; 39                                              ;
+; Total pins                      ; 15                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -72,7 +71,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; sendblock          ; sendblock          ;
+; Top-level entity name                                                           ; reciveblock        ; sendblock          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -175,62 +174,67 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path ; Library ;
 +----------------------------------+-----------------+------------------------------+------------------------------+---------+
-; sendblock.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/send block/sendblock.sv   ;         ;
 ; BSC.sv                           ; yes             ; User SystemVerilog HDL File  ; U:/send block/BSC.sv         ;         ;
 ; BIC.sv                           ; yes             ; User SystemVerilog HDL File  ; U:/send block/BIC.sv         ;         ;
 ; SRclock.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/send block/SRclock.sv     ;         ;
-; pari2seri.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/send block/pari2seri.sv   ;         ;
+; reciveblock.sv                   ; yes             ; User SystemVerilog HDL File  ; U:/send block/reciveblock.sv ;         ;
+; startblock.sv                    ; yes             ; User SystemVerilog HDL File  ; U:/send block/startblock.sv  ;         ;
+; seri2pari.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/send block/seri2pari.sv   ;         ;
 +----------------------------------+-----------------+------------------------------+------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 74         ;
-;                                             ;            ;
-; Combinational ALUT usage for logic          ; 85         ;
-;     -- 7 input functions                    ; 1          ;
-;     -- 6 input functions                    ; 21         ;
-;     -- 5 input functions                    ; 16         ;
-;     -- 4 input functions                    ; 33         ;
-;     -- <=3 input functions                  ; 14         ;
-;                                             ;            ;
-; Dedicated logic registers                   ; 114        ;
-;                                             ;            ;
-; I/O pins                                    ; 17         ;
-;                                             ;            ;
-; Total DSP Blocks                            ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; load~input ;
-; Maximum fan-out                             ; 84         ;
-; Total fan-out                               ; 733        ;
-; Average fan-out                             ; 3.15       ;
-+---------------------------------------------+------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 21          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 30          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 5           ;
+;     -- 5 input functions                    ; 1           ;
+;     -- 4 input functions                    ; 10          ;
+;     -- <=3 input functions                  ; 14          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 39          ;
+;                                             ;             ;
+; I/O pins                                    ; 15          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 39          ;
+; Total fan-out                               ; 274         ;
+; Average fan-out                             ; 2.77        ;
++---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
-; |sendblock                 ; 85 (0)              ; 114 (0)                   ; 0                 ; 0          ; 17   ; 0            ; |sendblock               ; sendblock   ; work         ;
-;    |BIC:bt2|               ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |sendblock|BIC:bt2       ; BIC         ; work         ;
-;    |BSC:bt1|               ; 12 (12)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |sendblock|BSC:bt1       ; BSC         ; work         ;
-;    |pari2seri:ps1|         ; 69 (69)             ; 101 (101)                 ; 0                 ; 0          ; 0    ; 0            ; |sendblock|pari2seri:ps1 ; pari2seri   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+; |reciveblock               ; 30 (0)              ; 39 (0)                    ; 0                 ; 0          ; 15   ; 0            ; |reciveblock               ; reciveblock ; work         ;
+;    |BIC:b2|                ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |reciveblock|BIC:b2        ; BIC         ; work         ;
+;    |BSC:b1|                ; 12 (12)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |reciveblock|BSC:b1        ; BSC         ; work         ;
+;    |seri2pari:s2p|         ; 1 (1)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |reciveblock|seri2pari:s2p ; seri2pari   ; work         ;
+;    |startblock:st|         ; 13 (13)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |reciveblock|startblock:st ; startblock  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; pari2seri:ps1|senddata[0]             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                   ;
++---------------------------------------+------------------------------+
+; Register name                         ; Reason for Removal           ;
++---------------------------------------+------------------------------+
+; seri2pari:s2p|count[3]                ; Merged with BSC:b1|count2[3] ;
+; seri2pari:s2p|count[0]                ; Merged with BSC:b1|count2[0] ;
+; seri2pari:s2p|count[2]                ; Merged with BSC:b1|count2[2] ;
+; seri2pari:s2p|count[1]                ; Merged with BSC:b1|count2[1] ;
+; Total Number of Removed Registers = 4 ;                              ;
++---------------------------------------+------------------------------+
 
 
 +------------------------------------------------------+
@@ -238,33 +242,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 114   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 39    ;
+; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Clear ; 39    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 90    ;
+; Number of registers using Clock Enable       ; 17    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |sendblock|BIC:bt2|count[0]          ;
-; 12:1               ; 7 bits    ; 56 LEs        ; 49 LEs               ; 7 LEs                  ; Yes        ; |sendblock|pari2seri:ps1|senddata[4] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pari2seri:ps1"                                                                                                                               ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |reciveblock|BIC:b2|count[0]        ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |reciveblock|startblock:st|count[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -272,24 +267,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 114                         ;
-;     CLR               ; 13                          ;
-;     ENA               ; 90                          ;
-;     plain             ; 11                          ;
-; arriav_lcell_comb     ; 85                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 84                          ;
-;         1 data inputs ; 3                           ;
+; arriav_ff             ; 39                          ;
+;     CLR               ; 22                          ;
+;     ENA CLR           ; 8                           ;
+;     ENA CLR SCLR      ; 9                           ;
+; arriav_lcell_comb     ; 30                          ;
+;     arith             ; 9                           ;
+;         1 data inputs ; 9                           ;
+;     normal            ; 21                          ;
+;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 33                          ;
-;         5 data inputs ; 16                          ;
-;         6 data inputs ; 21                          ;
-; boundary_port         ; 17                          ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 5                           ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.02                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -298,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -308,7 +303,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
-    Info: Processing started: Tue Dec 05 17:43:09 2017
+    Info: Processing started: Tue Dec 05 19:48:37 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sendblock -c sendblock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -323,23 +318,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file srclock
 Info (12021): Found 2 design units, including 2 entities, in source file pari2seri.sv
     Info (12023): Found entity 1: pari2seri File: U:/send block/pari2seri.sv Line: 4
     Info (12023): Found entity 2: pari2seri_testbench File: U:/send block/pari2seri.sv Line: 122
-Info (12127): Elaborating entity "sendblock" for the top level hierarchy
-Info (12128): Elaborating entity "BSC" for hierarchy "BSC:bt1" File: U:/send block/sendblock.sv Line: 11
-Info (12128): Elaborating entity "BIC" for hierarchy "BIC:bt2" File: U:/send block/sendblock.sv Line: 12
-Info (12128): Elaborating entity "SRclock" for hierarchy "SRclock:clk1" File: U:/send block/sendblock.sv Line: 13
-Info (12128): Elaborating entity "pari2seri" for hierarchy "pari2seri:ps1" File: U:/send block/sendblock.sv Line: 14
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12021): Found 1 design units, including 1 entities, in source file reciveblock.sv
+    Info (12023): Found entity 1: reciveblock File: U:/send block/reciveblock.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file startblock.sv
+    Info (12023): Found entity 1: startblock File: U:/send block/startblock.sv Line: 4
+Info (12021): Found 2 design units, including 2 entities, in source file seri2pari.sv
+    Info (12023): Found entity 1: seri2pari File: U:/send block/seri2pari.sv Line: 6
+    Info (12023): Found entity 2: seri2pari_testbench File: U:/send block/seri2pari.sv Line: 51
+Info (12127): Elaborating entity "reciveblock" for the top level hierarchy
+Info (12128): Elaborating entity "startblock" for hierarchy "startblock:st" File: U:/send block/reciveblock.sv Line: 12
+Info (12128): Elaborating entity "BSC" for hierarchy "BSC:b1" File: U:/send block/reciveblock.sv Line: 13
+Info (12128): Elaborating entity "BIC" for hierarchy "BIC:b2" File: U:/send block/reciveblock.sv Line: 14
+Info (12128): Elaborating entity "SRclock" for hierarchy "SRclock:sclk" File: U:/send block/reciveblock.sv Line: 15
+Info (12128): Elaborating entity "seri2pari" for hierarchy "seri2pari:s2p" File: U:/send block/reciveblock.sv Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 165 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 729 megabytes
-    Info: Processing ended: Tue Dec 05 17:43:30 2017
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:30
+Info (21057): Implemented 62 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 47 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 723 megabytes
+    Info: Processing ended: Tue Dec 05 19:48:56 2017
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:26
 
 

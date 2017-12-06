@@ -1,0 +1,45 @@
+
+
+
+
+
+module seri2pari(srclk, inbit, outbyte);
+	input srclk, inbit;
+	output logic [7:0] outbyte;
+	
+	logic [8:0] datahold;
+	
+	logic [3:0] count;
+	
+	always_ff @(posedge srclk) begin
+		if(reset) begin
+			datahold <= 0;
+		end else begin
+			datahold[8] <= datahold[7];
+			datahold[7] <= datahold[6];
+			datahold[6] <= datahold[5];
+			datahold[5] <= datahold[4];
+			datahold[4] <= datahold[3];
+			datahold[3] <= datahold[2];
+			datahold[2] <= datahold[1];
+			datahold[1] <= datahold[0];
+			datahold[0] <= inbit;
+		end
+	end
+	
+	always_ff @(posedge srclk) begin
+		if(reset) begin
+			count <= 0;
+			outbyte <= 0;
+		end else if(count == 9) begin
+			outbyte <= datahold[7:0];
+			count <= 0;
+		end else begin
+			count <= count + 1'b1;
+		end
+	end
+	
+	
+	
+endmodule
+
