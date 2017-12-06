@@ -2,18 +2,20 @@
 
 
 
-module sendblock(clk, reset, transmiting, load, busin, outbit, whichbit);
+module sendblock(clk, reset, transmiting, load, busin, outbit, whichbit, midpoint, srclk, datakept);
 	input logic clk, reset, transmiting, load;
 	input logic [7:0] busin;
 	output logic outbit;
 	output logic [3:0] whichbit;
+	output logic [9:0][7:0] datakept;
 	
-	logic midpoint;
+	
+	output logic midpoint;
 	SendBSC bitcounter (.clk, .reset, .transmiting, .midpoint);
 	SendBIC bitidenity (.reset, .transmiting, .midpoint, .count(whichbit));
-	logic srclk;
+	output logic srclk;
 	SRclock thisclock (.midpoint, .srclk);
-	par2seri sendingblk (.clk, .srclk, .load, .reset, .busin, .outbit);
+	par2seri sendingblk (.clk, .srclk, .load, .reset, .busin, .outbit, .datakept);
 	
 endmodule
 
@@ -54,7 +56,7 @@ module SendBIC(reset, transmiting, midpoint, count);
 	input logic reset, transmiting, midpoint;
 	output logic [3:0] count;
 	
-	always_ff @(posedge midpoint) begin
+	always_ff @(posedge midpoint or posedge reset) begin
 		if(reset) begin
 			count <= 0;
 		end else if (transmiting & ~(count == 4'b1001)) begin
@@ -81,28 +83,31 @@ endmodule
 //only sends new values 
 //allows for new data to be added while transsmiting without corupting the data currently being sent
 //note avoid sending more than 10 data sets in rapid succession. data will be lost.
-module par2seri(clk, srclk, load, reset, busin, outbit);
+module par2seri(clk, srclk, load, reset, busin, outbit, datakept);
 	input logic clk, srclk, load, reset;
 	input logic [7:0] busin;
 	output logic outbit;
+	output logic [9:0][7:0] datakept;
 	
 	logic [3:0] count, count2, count3;
 	//logic full;
 	
-	always_ff @(negedge load) begin
+	always_ff @(negedge load or posedge reset) begin
 		if(reset) begin
 			count <= 0;
 		//	full <= 0;
-		end else if (~(count == 4'b1001)) begin
-			count <= count + 1'b1;
-		//	full <= 0;
-		end else if (count == 4'b1001) begin
+		end else if ((count == 4'b1001)) begin
+			//count <= count + 1'b1;
 			count <= 0;
+		//	full <= 0;
+		end else /*if (count == 4'b1001)*/ begin
+			//count <= 0;
+			count <= count + 1'b1;
 		//	full <= 1;
 		end
 	end
 	
-	always_ff @(posedge srclk) begin
+	always_ff @(posedge srclk or posedge reset) begin
 		if(reset) begin
 			count2 <= 0;
 			count3 <= 0;
@@ -148,7 +153,7 @@ module par2seri(clk, srclk, load, reset, busin, outbit);
 	
 	logic [9:0] holder;
 	logic [7:0] readdata;
-	always_ff @(posedge srclk) begin
+	always_ff @(posedge srclk or posedge reset) begin
 		if (reset) begin
 			holder <= 0;
 		end else if (count2 == 4'b0000) begin
@@ -168,7 +173,7 @@ module par2seri(clk, srclk, load, reset, busin, outbit);
 			end
 	end
 		
-	tenByteBuffer outbuff (.read(count3), .write(count), .dataWr(busin), .clk, .writeEn(load), .reset, .readdata);
+	tenByteBuffer outbuff (.read(count3), .write(count), .dataWr(busin), .clk, .writeEn(load), .reset, .readdata, .datakept);
 	
 	assign outbit = holder[9];
 	
@@ -185,7 +190,7 @@ endmodule
 //writeEn enables the overwrite
 //readdata gives the data stored at the location picked by read
 
-module tenByteBuffer (read, write, dataWr, clk, writeEn, reset, readdata);
+module tenByteBuffer (read, write, dataWr, clk, writeEn, reset, readdata, datakept);
 	input logic [3:0] read, write;
 	input logic [7:0] dataWr;
 	input logic clk, writeEn, reset;
@@ -194,7 +199,7 @@ module tenByteBuffer (read, write, dataWr, clk, writeEn, reset, readdata);
 	logic [9:0] enWr;
 	sendDecoder de (.in(write), .out(enWr));
 	
-	logic [9:0][7:0] datakept;
+	output logic [9:0][7:0] datakept;
 	
 	genvar i;
 	generate
@@ -319,7 +324,54 @@ endmodule
 
 
 
+module sendblock_testbench();
+	logic clk, reset, transmiting, load;
+	logic [7:0] busin;
+	logic outbit;
+	logic [3:0] whichbit;
+	logic midpoint;
+	logic srclk;
+	logic [9:0][7:0] datakept;
+	
+	sendblock dut (.clk, .reset, .transmiting, .load, .busin, .outbit, .whichbit, .midpoint, .srclk, .datakept);
+	
+	parameter ClockDelay = 5000;
+	initial begin // Set up the clock
+		clk <= 0;
+		forever #(ClockDelay/2) clk <= ~clk;
+	end
 
+	integer i, j;
+	
+	initial begin
+		@(posedge clk);
+		reset <= 1;
+		transmiting <= 0;
+		load <= 0;
+		busin <= 0;
+		@(posedge clk);
+		reset <= 0;
+		@(posedge clk);
+		for(i=0; i<10; i++) begin
+			busin <= busin + i;
+			for(j=0; j<2; j++) begin
+				load <= load + 1'b1;
+				@(posedge clk);
+			end
+		end
+		transmiting <= 1'b1;
+		for(i=0; i<400; i++) begin
+			@(posedge clk);
+		end
+		transmiting <= 0;
+		for(i=0; i<100; i++) begin
+			@(posedge clk);
+		end
+		
+		$stop;
+	end
+		
+endmodule
 
 
 

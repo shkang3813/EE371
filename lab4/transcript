@@ -1,0 +1,1352 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:11:37 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# ** Error: (vlog-13069) ./sendblock.sv(359): near "end": syntax error, unexpected end, expecting ';'.
+# End time: 15:11:38 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:14:58 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# ** Error: (vlog-13069) ./sendblock.sv(359): near "end": syntax error, unexpected end, expecting ';'.
+# End time: 15:14:59 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:16:13 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:16:14 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:16:14 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:16:14 on Dec 04,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:16:14 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:16:15 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:16:15 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(358)
+#    Time: 15012500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 358
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:19:13 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:19:14 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:19:14 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:19:15 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:19:15 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:19:16 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 15:19:17 on Dec 04,2017, Elapsed time: 0:03:02
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:19:17 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(358)
+#    Time: 15012500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 358
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:20:32 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# ** Error: (vlog-13069) ./sendblock.sv(352): near "end": syntax error, unexpected end.
+# ** Error: (vlog-13069) ./sendblock.sv(362): near "endmodule": syntax error, unexpected endmodule.
+# End time: 15:20:33 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:21:05 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:21:07 on Dec 04,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:21:07 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:21:07 on Dec 04,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:21:07 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:21:08 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 15:21:10 on Dec 04,2017, Elapsed time: 0:01:53
+# Errors: 5, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:21:10 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(202): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(230).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(359)
+#    Time: 15112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 359
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE371/lab4/sendblock_testbench_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:26:38 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:26:39 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:26:39 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:26:40 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:26:40 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:26:41 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 15:26:43 on Dec 04,2017, Elapsed time: 0:05:33
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:26:43 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(362)
+#    Time: 15112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 362
+add wave -position insertpoint  \
+sim:/sendblock_testbench/midpoint
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE371/lab4/sendblock_testbench_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:28:16 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:28:18 on Dec 04,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:28:18 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:28:19 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:28:19 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:28:20 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 15:28:21 on Dec 04,2017, Elapsed time: 0:01:38
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:28:21 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(362)
+#    Time: 15112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 362
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:32:10 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:32:11 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:32:11 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:32:12 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:32:12 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:32:12 on Dec 04,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 15:32:14 on Dec 04,2017, Elapsed time: 0:03:53
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:32:14 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(363)
+#    Time: 3112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 363
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:39:44 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:39:45 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:39:45 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:39:46 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:39:46 on Dec 04,2017
+# vlog -reportprogress 300 ./tenbytebuffer.sv 
+# -- Compiling module tenbytebuffer
+# -- Compiling module decoder
+# -- Compiling module build
+# -- Compiling module impD_FF
+# -- Compiling module D_FF
+# -- Compiling module readpross
+# -- Compiling module muxthis
+# 
+# Top level modules:
+# 	tenbytebuffer
+# End time: 15:39:47 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 15:39:48 on Dec 04,2017, Elapsed time: 0:07:34
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:39:48 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(204): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(232).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(363)
+#    Time: 3112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 363
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:44:40 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# ** Error: ./sendblock.sv(90): In, out, or inout does not appear in port list: datakept.
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# End time: 15:44:41 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:45:58 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# ** Error: ./sendblock.sv(90): In, out, or inout does not appear in port list: datakept.
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# End time: 15:45:59 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:46:41 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# ** Error: ./sendblock.sv(90): In, out, or inout does not appear in port list: datakept.
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# End time: 15:46:46 on Dec 04,2017, Elapsed time: 0:00:05
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:57 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# ** Error: ./sendblock.sv(90): In, out, or inout does not appear in port list: datakept.
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# End time: 15:50:58 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./sendblock.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:52:20 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:52:22 on Dec 04,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:52:22 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:52:22 on Dec 04,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 15:52:24 on Dec 04,2017, Elapsed time: 0:12:36
+# Errors: 16, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:52:24 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(365)
+#    Time: 3112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 365
+add wave -position end  sim:/sendblock_testbench/datakept
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE371/lab4/sendblock_testbench_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:53:08 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 15:53:09 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:53:09 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 15:53:10 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 15:53:11 on Dec 04,2017, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 15:53:11 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(205): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(233).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(365)
+#    Time: 3112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 365
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:00:11 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 16:00:12 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:00:13 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 16:00:13 on Dec 04,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:00:15 on Dec 04,2017, Elapsed time: 0:07:04
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 16:00:15 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(367)
+#    Time: 3112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 367
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE371/lab4/sendblock_testbench_wave.do
+add wave -position insertpoint  \
+sim:/sendblock_testbench/srclk
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE371/lab4/sendblock_testbench_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:10:00 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 16:10:02 on Dec 04,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:10:02 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 16:10:03 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 16:10:05 on Dec 04,2017, Elapsed time: 0:09:50
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 16:10:05 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(367)
+#    Time: 3112500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 367
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:17 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 16:14:18 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:18 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 16:14:19 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 16:14:21 on Dec 04,2017, Elapsed time: 0:04:16
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 16:14:21 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(371)
+#    Time: 2612500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 371
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:53 on Dec 04,2017
+# vlog -reportprogress 300 ./sendblock.sv 
+# -- Compiling module sendblock
+# -- Compiling module SendBSC
+# -- Compiling module SendBIC
+# -- Compiling module SRclock
+# -- Compiling module par2seri
+# -- Compiling module tenByteBuffer
+# -- Compiling module sendDecoder
+# -- Compiling module sendBuild
+# -- Compiling module sendImpsendD_FF
+# -- Compiling module sendD_FF
+# -- Compiling module sendReadpross
+# -- Compiling module sendMuxthis
+# -- Compiling module sendblock_testbench
+# 
+# Top level modules:
+# 	sendblock_testbench
+# End time: 16:14:54 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:54 on Dec 04,2017
+# vlog -reportprogress 300 ./reciveblock.sv 
+# -- Compiling module reciveblock
+# -- Compiling module startreader
+# -- Compiling module BSC
+# -- Compiling module BIC
+# -- Compiling module sendSRclock
+# -- Compiling module seri2par
+# 
+# Top level modules:
+# 	reciveblock
+# End time: 16:14:55 on Dec 04,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 16:14:56 on Dec 04,2017, Elapsed time: 0:00:35
+# Errors: 0, Warnings: 10
+# vsim -voptargs=""+acc"" -t 1ps -lib work sendblock_testbench 
+# Start time: 16:14:56 on Dec 04,2017
+# Loading sv_std.std
+# Loading work.sendblock_testbench
+# Loading work.sendblock
+# Loading work.SendBSC
+# Loading work.SendBIC
+# Loading work.SRclock
+# Loading work.par2seri
+# Loading work.tenByteBuffer
+# Loading work.sendDecoder
+# Loading work.sendReadpross
+# Loading work.sendMuxthis
+# Loading work.sendBuild
+# Loading work.sendImpsendD_FF
+# Loading work.sendD_FF
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[0]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[1]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[2]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[3]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[4]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[5]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[6]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[7]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[8]/bil File: ./sendblock.sv
+# ** Warning: (vsim-3015) ./sendblock.sv(207): [PCDPC] - Port size (1) does not match connection size (10) for port 'enable'. The port definition is at: ./sendblock.sv(235).
+#    Time: 0 ps  Iteration: 0  Instance: /sendblock_testbench/dut/sendingblk/outbuff/eachdata[9]/bil File: ./sendblock.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./sendblock.sv(371)
+#    Time: 2612500 ps  Iteration: 1  Instance: /sendblock_testbench
+# Break in Module sendblock_testbench at ./sendblock.sv line 371
+# End time: 16:36:56 on Dec 04,2017, Elapsed time: 0:22:00
+# Errors: 0, Warnings: 10

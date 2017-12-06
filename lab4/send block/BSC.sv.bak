@@ -1,0 +1,27 @@
+
+
+
+module BSC(clk, reset, transmiting, midpoint);
+	input logic clk, reset, transmiting;
+	output logic midpoint;
+	
+	logic [3:0] count;
+	always_ff @(posedge clk) begin
+		if(reset) begin
+			count <= 0;
+		end else if(transmiting) begin
+			count <= count + 4'b1;
+		end else
+			count <= 0;
+		end
+		
+		if(count == 4'b0111) begin
+			midpoint <= 1;
+		end else
+			midpoint <= 0;
+		end
+	end
+	
+endmodule
+
+

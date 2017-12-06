@@ -1,0 +1,84 @@
+
+
+
+module pari2seri();
+	input logic load, srclk;
+	input logic [7:0] databyte;
+	output logic outbit;
+	
+	logic [9:0][7:0] dataheld;
+	logic [3:0] count, count2, count3;
+	logic [9:0] senddata;
+	
+	always_ff @(posedge load) begin
+		if(reset)begin
+			dataheld[0] <= 0;
+			dataheld[1] <= 0;
+			dataheld[2] <= 0;
+			dataheld[3] <= 0;
+			dataheld[4] <= 0;
+			dataheld[5] <= 0;
+			dataheld[6] <= 0;
+			dataheld[7] <= 0;
+			dataheld[8] <= 0;
+			dataheld[9] <= 0;
+			count <= 0;
+		end else if (count == 0) begin
+			dataheld[0] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 1) begin
+			dataheld[1] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 2) begin
+			dataheld[2] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 3) begin
+			dataheld[3] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 4) begin
+			dataheld[4] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 5) begin
+			dataheld[5] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 6) begin
+			dataheld[6] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 7) begin
+			dataheld[7] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 8) begin
+			dataheld[8] <= databyte;
+			count <= count + 1'b1;
+		end else if (count == 9) begin
+			dataheld[9] <= databyte;
+			count <= 0;
+		end else begin
+			count <= 0;
+		end
+	end
+	
+	
+	always_ff @(posedge srclk) begin
+		if(reset) begin
+			count2 <= 0;
+			count3 <= 0;
+			senddata <= 0;
+		end else if(count == 0) begin
+			count2 <= count2 + 1'b1;
+		end
+	end
+	
+	always_ff @(posedge srclk) begin
+		if(reset) begin
+			senddata <= 0;
+		end else if (count2 == 4'b1001)begin
+			if(count3 == 0) begin
+				senddata <= {1'b1, dataheld[0], 0'b0};
+			end else if (count3 == 1) begin
+				senddata <= {1'b1, dataheld[0], 0'b0};
+			end
+		end
+	end
+	
+endmodule
