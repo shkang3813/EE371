@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4632020321c3be52f9f6"/>
+    <hash md5_digest_80b="8097f4d4f78f5ba95d4f"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="DE1_SoC.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="first_nios2_system:sys" name="sys">
       <assignment_values>
-        <assignment_value text="QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1512528086"/>
+        <assignment_value text="QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1512421685"/>
       </assignment_values>
       <parameters/>
     </sld_info>
