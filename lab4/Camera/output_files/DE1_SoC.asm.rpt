@@ -1,5 +1,5 @@
 Assembler report for DE1_SoC
-Tue Dec 05 19:23:55 2017
+Wed Dec 06 14:24:01 2017
 Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/skang123/Desktop/EE371/lab4/Camera/output_files/DE1_SoC.sof
+  6. Assembler Device Options: C:/Users/ezien/Desktop/EE371/lab4/Camera/output_files/DE1_SoC.sof
   7. Assembler Messages
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Dec 05 19:23:55 2017 ;
+; Assembler Status      ; Successful - Wed Dec 06 14:24:01 2017 ;
 ; Revision Name         ; DE1_SoC                               ;
 ; Top-level Entity Name ; DE1_SoC                               ;
 ; Family                ; Cyclone V                             ;
@@ -65,23 +65,23 @@ agreement for further details.
 +--------+-------------------------------+--------------+
 
 
-+----------------------------------------------------------------------+
-; Assembler Generated Files                                            ;
-+----------------------------------------------------------------------+
-; File Name                                                            ;
-+----------------------------------------------------------------------+
-; C:/Users/skang123/Desktop/EE371/lab4/Camera/output_files/DE1_SoC.sof ;
-+----------------------------------------------------------------------+
++-------------------------------------------------------------------+
+; Assembler Generated Files                                         ;
++-------------------------------------------------------------------+
+; File Name                                                         ;
++-------------------------------------------------------------------+
+; C:/Users/ezien/Desktop/EE371/lab4/Camera/output_files/DE1_SoC.sof ;
++-------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/skang123/Desktop/EE371/lab4/Camera/output_files/DE1_SoC.sof ;
-+----------------+-------------------------------------------------------------------------------+
-; Option         ; Setting                                                                       ;
-+----------------+-------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x01B07427                                                                    ;
-; Checksum       ; 0x01B07427                                                                    ;
-+----------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/ezien/Desktop/EE371/lab4/Camera/output_files/DE1_SoC.sof ;
++----------------+----------------------------------------------------------------------------+
+; Option         ; Setting                                                                    ;
++----------------+----------------------------------------------------------------------------+
+; JTAG usercode  ; 0x01B0F36C                                                                 ;
+; Checksum       ; 0x01B0F36C                                                                 ;
++----------------+----------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -90,13 +90,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
-    Info: Processing started: Tue Dec 05 19:23:46 2017
+    Info: Processing started: Wed Dec 06 14:23:52 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 774 megabytes
-    Info: Processing ended: Tue Dec 05 19:23:55 2017
+    Info: Peak virtual memory: 781 megabytes
+    Info: Processing ended: Wed Dec 06 14:24:01 2017
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:09
 

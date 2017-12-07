@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE1_SoC
-Tue Nov 28 15:57:25 2017
+Tue Dec 05 17:11:43 2017
 Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
 
 
@@ -104,14 +104,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.80        ;
+; Average used               ; 1.78        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  26.8%      ;
-;     Processor 3            ;  26.7%      ;
-;     Processor 4            ;  26.7%      ;
+;     Processor 2            ;  26.2%      ;
+;     Processor 3            ;  26.1%      ;
+;     Processor 4            ;  26.1%      ;
 +----------------------------+-------------+
 
 
@@ -120,8 +120,8 @@ agreement for further details.
 +------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                          ; Status ; Read at                  ;
 +------------------------------------------------------------------------+--------+--------------------------+
-; first_nios2_system/synthesis/submodules/altera_reset_controller.sdc    ; OK     ; Tue Nov 28 15:57:17 2017 ;
-; first_nios2_system/synthesis/submodules/first_nios2_system_cpu_cpu.sdc ; OK     ; Tue Nov 28 15:57:17 2017 ;
+; first_nios2_system/synthesis/submodules/altera_reset_controller.sdc    ; OK     ; Tue Dec 05 17:11:35 2017 ;
+; first_nios2_system/synthesis/submodules/first_nios2_system_cpu_cpu.sdc ; OK     ; Tue Dec 05 17:11:35 2017 ;
 +------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -697,7 +697,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
-    Info: Processing started: Tue Nov 28 15:57:14 2017
+    Info: Processing started: Tue Dec 05 17:11:32 2017
 Info: Command: quartus_sta DE1_SoC -c DE1_SoC
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -892,17 +892,17 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 17.8
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info (144001): Generated suppressed messages file C:/Users/skang123/Desktop/lab4/GPIO/output_files/DE1_SoC.sta.smsg
+Info (144001): Generated suppressed messages file C:/Users/ezien/Desktop/EE371/lab4/GPIO/output_files/DE1_SoC.sta.smsg
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 1113 megabytes
-    Info: Processing ended: Tue Nov 28 15:57:25 2017
-    Info: Elapsed time: 00:00:11
+    Info: Processing ended: Tue Dec 05 17:11:42 2017
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:16
 
 
 +-----------------------------------------------+
 ; TimeQuest Timing Analyzer Suppressed Messages ;
 +-----------------------------------------------+
-The suppressed messages can be found in C:/Users/skang123/Desktop/lab4/GPIO/output_files/DE1_SoC.sta.smsg.
+The suppressed messages can be found in C:/Users/ezien/Desktop/EE371/lab4/GPIO/output_files/DE1_SoC.sta.smsg.
 
 
