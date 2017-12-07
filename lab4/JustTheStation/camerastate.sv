@@ -1,0 +1,230 @@
+
+module camerastate (GoToStandbyIN, StartFilmingIN, DownloadIN, FlushIN, clk, reset,
+							lowpowerstate, standbystate, activestate, idlestate, downloadingstate, flushstate,
+							ForceflushOUT, ReadyToDownloadOUT, GoToStandbyOUT, StartFilmingOUT,
+							data, buffdata);
+						
+	input logic  GoToStandbyIN, StartFilmingIN, DownloadIN, FlushIN, clk, reset;
+	
+	output logic lowpowerstate, standbystate, activestate, idlestate, downloadingstate, flushstate,
+						ForceflushOUT, ReadyToDownloadOUT, GoToStandbyOUT, StartFilmingOUT;
+
+	output logic [6:0] data;
+	output logic [7:0] buffdata;
+	logic up, down;
+
+	enum{LowPower, Standby, Active, Active80, Act80DowRece, Idle, Download_state, Flush} ps, ns;
+
+	always_comb
+		case(ps)
+		
+			LowPower: 			if(GoToStandbyIN)							ns = Standby;
+									else											ns = LowPower;
+			Standby: 			if(StartFilmingIN)						ns = Active;
+									else											ns = Standby;
+			Active:				if(data == 7'b1011111) 					ns = Active80;   		//95
+									else											ns = Active;
+			Active80: 			if(DownloadIN)								ns = Act80DowRece;
+									else if(data == 7'b1100100) 			ns = Idle;				//100
+									else											ns = Active80;
+			Act80DowRece: 		if(data == 7'b1100100)					ns = Download_state;	//100
+									else											ns = Act80DowRece;
+			Idle: 				if(DownloadIN)								ns = Download_state;
+									else if(FlushIN)							ns = Flush;
+									else											ns = Idle;
+			Download_state: 	if(data == 7'b0)							ns = LowPower;
+									else											ns = Download_state;
+			Flush:				if(data == 7'b0)							ns = LowPower;
+									else											ns = Flush;
+			
+		endcase
+
+		
+		
+	assign up = (ps == Active) | (ps == Active80) | (ps == Act80DowRece);	
+	assign down = (ps == Download_state) | (ps == Flush);
+		
+	countercam modeldata (.up, .down, .clk, .reset, .count(data), .buffdata);	
+	
+	assign lowpowerstate = (ps == LowPower);
+	assign standbystate = (ps == Standby);
+	assign activestate = (ps == Active) | (ps == Active80) | (ps == Act80DowRece);
+	assign idlestate = (ps == Idle);
+	assign downloadingstate = (ps == Download_state);
+	assign flushstate = (ps == Flush);
+	
+	assign ForceflushOUT = (data == 7'b0101000); //40
+	assign ReadyToDownloadOUT = (ps == Active80) | (ps == Idle);
+	assign GoToStandbyOUT = (data == 7'b1011111); //95
+	assign StartFilmingOUT = (data == 7'b1100011); //99
+	
+
+
+	always_ff @(posedge clk) begin
+		if (reset)
+			ps <= LowPower;
+		else 
+			ps <= ns;
+	end
+
+endmodule
+
+
+module camerastate_testbench();
+	logic  GoToStandbyIN, StartFilmingIN, DownloadIN, FlushIN, clk, reset;
+	
+	logic lowpowerstate, standbystate, activestate, idlestate, downloadingstate, flushstate,
+						ForceflushOUT, ReadyToDownloadOUT, GoToStandbyOUT, StartFilmingOUT;
+	logic [7:0] buffdata;
+	logic [6:0] data;
+	
+	
+	camerastate dut (.GoToStandbyIN, .StartFilmingIN, .DownloadIN, .FlushIN, .clk, .reset,
+							.lowpowerstate, .standbystate, .activestate, .idlestate, .downloadingstate, .flushstate,
+							.ForceflushOUT, .ReadyToDownloadOUT, .GoToStandbyOUT, .StartFilmingOUT,
+							.data, .buffdata);
+	
+	//setup the clock
+	parameter CLOCK_PERIOD=100;
+	initial begin	
+		clk<= 0;
+		forever #(CLOCK_PERIOD/2) clk <= ~clk;
+	end
+	
+	integer i;
+	//set up the inputs to the design. Each line is a clock cycle.
+	initial begin
+			reset <= 1;
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			
+			for (i=0; i < 100; i++) begin
+				@(posedge clk);
+			end
+			
+			reset <= 0;
+			GoToStandbyIN <= 1;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			
+			for (i=0; i < 100; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 1; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			
+			for (i=0; i < 200; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 1;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 1; 
+			FlushIN <= 1;
+			
+			for (i=0; i < 80; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			
+			for (i=0; i < 60; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 1; 
+			FlushIN <= 0;
+			
+			for (i=0; i < 60; i++) begin
+				@(posedge clk);
+			end
+			
+			for (i=0; i < 140; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 1;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			@(posedge clk);
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 1; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			@(posedge clk);
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+						
+			for (i=0; i < 479; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 1; 
+			FlushIN <= 0;
+			@(posedge clk);
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			for (i=0; i < 250; i++) begin
+				@(posedge clk);
+			end
+			
+			GoToStandbyIN <= 1;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			@(posedge clk);
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 1; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+			@(posedge clk);
+			
+			GoToStandbyIN <= 0;
+			StartFilmingIN <= 0; 
+			DownloadIN <= 0; 
+			FlushIN <= 0;
+						
+			for (i=0; i < 479; i++) begin
+				@(posedge clk);
+			end
+			
+			FlushIN <= 1;
+			@(posedge clk);
+			
+			FlushIN <= 0;
+			@(posedge clk);
+			
+			for (i=0; i < 250; i++) begin
+				@(posedge clk);
+			end
+			
+			@(posedge clk);
+			
+			
+																								
+
+		$stop; // end the simulation.
+	end
+endmodule
