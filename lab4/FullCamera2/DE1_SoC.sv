@@ -1,9 +1,10 @@
-module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0);
+module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, GPIO_0);
 	output logic [9:0] LEDR;
 	input logic [3:0] KEY;
 	input logic [9:0] SW;
 	input logic CLOCK_50;
 	output logic [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0;
+	inout logic [35:0] GPIO_0;
 	
 	// Processor UART wires
 	wire transmit, load, loop;
@@ -52,11 +53,17 @@ module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0);
 	
 	// interface wires
 	logic processorOut, processorIn;
-	sendblock sBlockStation(clk[whichClock], ~KEY[0], transmit, load, dataOut, processorOut, bicS);
-	reciveblock rBlockStation(processorIn, clk[whichClock], ~KEY[0], bicR, dataIn);
+//	sendblock sBlockStation(clk[whichClock], ~KEY[0], transmit, load, dataOut, processorOut, bicS);
+//	reciveblock rBlockStation(processorIn, clk[whichClock], ~KEY[0], bicR, dataIn);
+//	
+//	sendblock sBlockCamera(clk[whichClock], ~KEY[0], camTransmit, camLoad, camDataOut, processorIn, camBicS);
+//	reciveblock rBlockCamera(processorOut, clk[whichClock], ~KEY[0], camBicR, camDataIn);
+
+	sendblock sBlockStation(clk[whichClock], ~KEY[0], transmit, load, dataOut, GPIO_0[19], bicS);
+	reciveblock rBlockStation(GPIO_0[16], clk[whichClock], ~KEY[0], bicR, dataIn);
 	
-	sendblock sBlockCamera(clk[whichClock], ~KEY[0], camTransmit, camLoad, camDataOut, processorIn, camBicS);
-	reciveblock rBlockCamera(processorOut, clk[whichClock], ~KEY[0], camBicR, camDataIn);
+	sendblock sBlockCamera(clk[whichClock], ~KEY[0], camTransmit, camLoad, camDataOut, GPIO_0[1], camBicS);
+	reciveblock rBlockCamera(GPIO_0[0], clk[whichClock], ~KEY[0], camBicR, camDataIn);
 	
 	seg7 h0 (.bcd(HEXwritecam2[3:0]), .leds(HEX0));
 	seg7 h1 (.bcd(HEXwritecam2[7:4]), .leds(HEX1));

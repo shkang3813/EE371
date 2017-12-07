@@ -1,13 +1,13 @@
 // GPIO 19 is OUT
 // GPIO 16 is IN
 
-module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, GPIO);
+module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, GPIO_0);
 	output logic [9:0] LEDR;
 	input logic [3:0] KEY;
 	input logic [9:0] SW;
 	input logic CLOCK_50;
 	output logic [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0;
-	inout logic [19:16] GPIO;
+	inout logic [35:0] GPIO_0;
 	
 	// Processor UART wires
 	wire transmit, load, loop;
@@ -31,45 +31,61 @@ module DE1_SoC (CLOCK_50, KEY, LEDR, SW, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, GPI
 	);
 	
 	// Camera UART wires
-	logic camTransmit, camLoad;
-	logic [3:0] camBicS, camBicR;
-	logic [7:0] camDataIn, camDataOut;
+//	logic camTransmit, camLoad;
+//	logic [3:0] camBicS, camBicR;
+//	logic [7:0] camDataIn, camDataOut;
 	
 	// For display purposes
-	logic [6:0] datacam1n, datacam2n;
-	logic [7:0] datacam1nn, datacam2nn;
-	logic [11:0] HEXwritecam1, HEXwritecam2;
-	
-	assign datacam1nn[6:0] = datacam1n;
-	assign datacam2nn[6:0] = datacam2n;
-	assign datacam1nn[7] = 0;
-	assign datacam2nn[7] = 0;
-	logic bicRis9;
-	assign LEDR[5] = bicRis9;
-	logic [6:0] camData1, camData2;
-	logic [5:0] cam1stn, cam2stn;
-	
-	newcamproject proj(clk[whichClock], ~KEY[0], camBicS, camDataIn, camDataOut, camTransmit, camLoad, datacam1n, datacam2n, cam1stn, cam2stn);
-	
-	con8to12 convertcam1 (.numberin(datacam1nn), .HEXwrite(HEXwritecam1));
-	con8to12 convertcam2 (.numberin(datacam2nn), .HEXwrite(HEXwritecam2));
+//	logic [6:0] datacam1n, datacam2n;
+//	logic [7:0] datacam1nn, datacam2nn;
+//	logic [11:0] HEXwritecam1, HEXwritecam2;
+//	
+//	assign datacam1nn[6:0] = datacam1n;
+//	assign datacam2nn[6:0] = datacam2n;
+//	assign datacam1nn[7] = 0;
+//	assign datacam2nn[7] = 0;
+//	logic bicRis9;
+//	logic [6:0] camData1, camData2;
+//	logic [5:0] cam1stn, cam2stn;
+//	
+//	newcamproject proj(clk[whichClock], ~KEY[0], camBicS, camDataIn, camDataOut, camTransmit, camLoad, datacam1n, datacam2n, cam1stn, cam2stn);
+//	
+//	con8to12 convertcam1 (.numberin(datacam1nn), .HEXwrite(HEXwritecam1));
+//	con8to12 convertcam2 (.numberin(datacam2nn), .HEXwrite(HEXwritecam2));
 	
 	// interface wires
-	logic processorOut, processorIn;
-	sendblock sBlockStation(CLOCK_50, ~KEY[0], transmit, load, dataOut, GPIO[19], bicS);
-	reciveblock rBlockStation(GPIO[16], CLOCK_50, ~KEY[0], bicR, dataIn);
+	//logic processorOut, processorIn;
+	sendblock sBlockStation(CLOCK_50, ~KEY[0], transmit, load, dataOut, GPIO_0[19], bicS);
+	reciveblock rBlockStation(GPIO_0[16], CLOCK_50, ~KEY[0], bicR, dataIn);
 	
-	logic dummy1, dummy2;
-	sendblock sBlockCamera(CLOCK_50, ~KEY[0], camTransmit, camLoad, camDataOut, dummy2, camBicS);
-	reciveblock rBlockCamera(dummy1, CLOCK_50, ~KEY[0], camBicR, camDataIn);
+//	logic dummy1, dummy2;
+//	sendblock sBlockCamera(CLOCK_50, ~KEY[0], camTransmit, camLoad, camDataOut, dummy2, camBicS);
+//	reciveblock rBlockCamera(dummy1, CLOCK_50, ~KEY[0], camBicR, camDataIn);
 	
-	seg7 h0 (.bcd(HEXwritecam2[3:0]), .leds(HEX0));
-	seg7 h1 (.bcd(HEXwritecam2[7:4]), .leds(HEX1));
-	seg7 h2 (.bcd(HEXwritecam2[11:8]), .leds(HEX2));
-	
-	seg7 h3 (.bcd(HEXwritecam1[3:0]), .leds(HEX3));
-	seg7 h4 (.bcd(HEXwritecam1[7:4]), .leds(HEX4));
-	seg7 h5 (.bcd(HEXwritecam1[11:8]), .leds(HEX5));
+//	seg7 h0 (.bcd(HEXwritecam2[3:0]), .leds(HEX0));
+//	seg7 h1 (.bcd(HEXwritecam2[7:4]), .leds(HEX1));
+//	seg7 h2 (.bcd(HEXwritecam2[11:8]), .leds(HEX2));
+//	
+//	seg7 h3 (.bcd(HEXwritecam1[3:0]), .leds(HEX3));
+//	seg7 h4 (.bcd(HEXwritecam1[7:4]), .leds(HEX4));
+//	seg7 h5 (.bcd(HEXwritecam1[11:8]), .leds(HEX5));
+//	
+//	logic temp;
+//	always @(posedge CLOCK_50) begin
+//		if (~KEY[0]) begin
+//			LEDR[5] <= 0;
+//			temp <= 0;
+//		end else if (GPIO_0[35]) begin
+//			LEDR[5] <= 1;
+//			temp <= 1;
+//		end else if (temp) begin
+//			LEDR[5] <= 1;
+//			temp <= 1;
+//		end else  begin
+//			LEDR[5] <= 0;
+//			temp <= 0;
+//		end 
+//	end
 endmodule
 
 // divided_closks[0] = 25MHz, [1] = 12.5MHz, ... [23] = 3Hz, [24] = 1.5Hz, [25] = 0.75Hz, ...

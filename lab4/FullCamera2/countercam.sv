@@ -49,7 +49,7 @@ module countercam (up, down, clk, reset, count, buffdata);
 	always_comb begin
 		if(reset) begin
 			buffdata = 0;
-		end else if (count >= 90) begin
+		end else if ((count >= 90) & (count < 100)) begin
 			buffdata = 8'b1001;
 		end else if ((count >= 80) & (count < 90)) begin
 			buffdata = 8'b1000;

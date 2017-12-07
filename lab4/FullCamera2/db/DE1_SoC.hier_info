@@ -66,6 +66,42 @@ HEX0[3] <= seg7:h0.leds
 HEX0[4] <= seg7:h0.leds
 HEX0[5] <= seg7:h0.leds
 HEX0[6] <= seg7:h0.leds
+GPIO_0[0] <> reciveblock:rBlockCamera.port0
+GPIO_0[1] <> sendblock:sBlockCamera.port5
+GPIO_0[2] <> <UNC>
+GPIO_0[3] <> <UNC>
+GPIO_0[4] <> <UNC>
+GPIO_0[5] <> <UNC>
+GPIO_0[6] <> <UNC>
+GPIO_0[7] <> <UNC>
+GPIO_0[8] <> <UNC>
+GPIO_0[9] <> <UNC>
+GPIO_0[10] <> <UNC>
+GPIO_0[11] <> <UNC>
+GPIO_0[12] <> <UNC>
+GPIO_0[13] <> <UNC>
+GPIO_0[14] <> <UNC>
+GPIO_0[15] <> <UNC>
+GPIO_0[16] <> reciveblock:rBlockStation.port0
+GPIO_0[17] <> <UNC>
+GPIO_0[18] <> <UNC>
+GPIO_0[19] <> sendblock:sBlockStation.port5
+GPIO_0[20] <> <UNC>
+GPIO_0[21] <> <UNC>
+GPIO_0[22] <> <UNC>
+GPIO_0[23] <> <UNC>
+GPIO_0[24] <> <UNC>
+GPIO_0[25] <> <UNC>
+GPIO_0[26] <> <UNC>
+GPIO_0[27] <> <UNC>
+GPIO_0[28] <> <UNC>
+GPIO_0[29] <> <UNC>
+GPIO_0[30] <> <UNC>
+GPIO_0[31] <> <UNC>
+GPIO_0[32] <> <UNC>
+GPIO_0[33] <> <UNC>
+GPIO_0[34] <> <UNC>
+GPIO_0[35] <> <UNC>
 
 
 |DE1_SoC|clock_dividerA:cdiv
